@@ -32,6 +32,7 @@ class Config extends Model
         'facebook_url',
         'instagram_url',
         'linkedin_url',
+        'cononical_url',
         'youtube_url',
         'keywords',
         'bank_name',

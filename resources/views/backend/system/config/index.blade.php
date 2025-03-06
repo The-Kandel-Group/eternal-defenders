@@ -207,7 +207,13 @@
                                placeholder="Video URL"/>
                         <div class="invalid-feedback">{{ $errors->first('video_url') }}</div>
                     </div>
-
+                    <div class="col-md-6">
+                        <label class="form-label" for="cononical_url">{{ 'Cononical Url' }}</label>
+                        <input value="{{ $thisData?->cononical_url ?? old('website') }}" type="url" name="cononical_url"
+                               id="website" class="form-control @if ($errors->first('cononical_url')) is-invalid @endif"
+                               placeholder="Website"/>
+                        <div class="invalid-feedback">{{ $errors->first('cononical_url') }}</div>
+                    </div>
                     <div class="col-md-12">
                         <label class="form-label" for="key_words">{{ 'Keywords' }}</label>
                         <textarea rows="8" name="keywords" id="keywords"

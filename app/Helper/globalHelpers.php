@@ -532,3 +532,11 @@ function countryList()
         'zimbabwe' => 'Zimbabwe',
     ];
 }
+function getCononicalUrl()
+{
+    if (!getConfigTableData()->cononical_url) {
+        return request()->url();
+    }
+    $curl = str_replace(request()->getHost(), getConfigTableData()->cononical_url, request()->url());
+    return $curl;
+}
