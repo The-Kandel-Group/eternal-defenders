@@ -35,9 +35,11 @@ Route::post('password/email', [App\Http\Controllers\Auth\ForgotPasswordControlle
 Route::get('password/reset/{token}', [App\Http\Controllers\Auth\ResetPasswordController::class, 'showResetForm'])->name('password.reset');
 Route::post('password/reset', [App\Http\Controllers\Auth\ResetPasswordController::class, 'reset'])->name('password.update');
 /*FRONTEND ROUTE*/
-$pages = \App\Models\Page::where('status', 1)->get();
-foreach ($pages as $page) {
-    Route::get('/'.$page->slug, [IndexController::class, 'pageDirectUrl'])->name('page'.$page->slug);
+if (\Illuminate\Support\Facades\Schema::hasTable('table_name')) {
+    $pages = \App\Models\Page::where('status', 1)->get();
+    foreach ($pages as $page) {
+        Route::get('/' . $page->slug, [IndexController::class, 'pageDirectUrl'])->name('page' . $page->slug);
+    }
 }
 Route::get('/', [IndexController::class, 'index'])->name('index');
 /*FRONTEND ROUTE*/
