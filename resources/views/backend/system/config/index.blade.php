@@ -208,11 +208,11 @@
                         <div class="invalid-feedback">{{ $errors->first('video_url') }}</div>
                     </div>
                     <div class="col-md-6">
-                        <label class="form-label" for="cononical_url">{{ 'Cononical Url' }}</label>
-                        <input value="{{ $thisData?->cononical_url ?? old('website') }}" type="url" name="cononical_url"
-                               id="website" class="form-control @if ($errors->first('cononical_url')) is-invalid @endif"
+                        <label class="form-label" for="canonical_url">{{ 'Cononical Url' }}</label>
+                        <input value="{{ $thisData?->canonical_url ?? old('website') }}" type="url" name="canonical_url"
+                               id="website" class="form-control @if ($errors->first('canonical_url')) is-invalid @endif"
                                placeholder="Website"/>
-                        <div class="invalid-feedback">{{ $errors->first('cononical_url') }}</div>
+                        <div class="invalid-feedback">{{ $errors->first('canonical_url') }}</div>
                     </div>
                     <div class="col-md-12">
                         <label class="form-label" for="key_words">{{ 'Keywords' }}</label>
