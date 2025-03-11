@@ -22,6 +22,7 @@ $monitorUrl = '/monitor';
 $redirectionUrl = '/redirections';
 $activityUrl = '/activities';
 $partnerUrl = '/partners';
+$vacancyUrl = '/vacancies';
 
 return [
     // routes entered in this array are accessible by any user no matter what role is given
@@ -77,6 +78,57 @@ return [
                         'method' => $getMethod,
                     ],
                 ]
+            ],
+        ],
+        [
+            'name' => 'Vacancies',
+            'icon' => "<i class='fa fa-box'></i>",
+            'hasSubmodules' => false,
+            'route' => $vacancyUrl,
+            'routeIndexName' => 'vacancies.index',
+            'routeName' => 'vacancies',
+            'permissions' => [
+                [
+                    'name' => 'View Vacancy',
+                    'route' => [
+                        'url' => $vacancyUrl,
+                        'method' => $getMethod,
+                    ],
+                ],
+                [
+                    'name' => 'Create Vacancy',
+                    'route' => [
+                        [
+                            'url' => $vacancyUrl . '/create',
+                            'method' => $getMethod,
+                        ],
+                        [
+                            'url' => $vacancyUrl,
+                            'method' => $postMethod,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Edit Vacancy',
+                    'route' => [
+                        [
+                            'url' => $vacancyUrl . '/*/edit',
+                            'method' => $getMethod,
+                        ],
+                        [
+                            'url' => $vacancyUrl . '/*',
+                            'method' => $putMethod,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Delete Vacancy',
+                    'route' => [
+                        'url' => $vacancyUrl . '/*',
+                        'method' => $deleteMethod,
+                    ],
+                ]
+
             ],
         ],
 
