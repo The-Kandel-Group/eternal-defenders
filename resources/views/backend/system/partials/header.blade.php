@@ -48,5 +48,38 @@
     .cke_notifications_area{
         display: none;
     }
+    .select2-container {
+        box-sizing: border-box;
+        display: inline-block;
+        margin: 0;
+        position: relative;
+        vertical-align: middle;
+        display: block;
+        width: 100%;
+        padding: 5px;
+        font-size: 0.9375rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #6f6b7d;
+        appearance: none;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: var(--bs-border-width) solid #dbdade;
+        border-radius: var(--bs-border-radius);
+        transition: border-color 0.15sease -in-out, box-shadow 0.15sease -in-out;
+        color: gray !important;
+    }
+
+    .select2-container .select2-selection--single {
+        box-sizing: border-box;
+        cursor: pointer;
+        display: block;
+        height: 28px;
+        user-select: none;
+        -webkit-user-select: none;
+        border: none !important;
+        color: gray !important;
+    }
+
 </style>
 @yield('css')
