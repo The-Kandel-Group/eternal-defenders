@@ -23,6 +23,7 @@ $redirectionUrl = '/redirections';
 $activityUrl = '/activities';
 $partnerUrl = '/partners';
 $vacancyUrl = '/vacancies';
+$vacancyApplicationUrl = '/vacancy-applications';
 
 return [
     // routes entered in this array are accessible by any user no matter what role is given
@@ -131,7 +132,57 @@ return [
 
             ],
         ],
+        [
+            'name' => 'Vacancy Application',
+            'icon' => "<i class='fa fa-mail-forward'></i>",
+            'hasSubmodules' => false,
+            'route' => $vacancyApplicationUrl,
+            'routeIndexName' => 'vacancy-applications.index',
+            'routeName' => 'vacancy-applications',
+            'permissions' => [
+                [
+                    'name' => 'View Vacancy Application',
+                    'route' => [
+                        'url' => $vacancyApplicationUrl,
+                        'method' => $getMethod,
+                    ],
+                ],
+                [
+                    'name' => 'Create Vacancy Application',
+                    'route' => [
+                        [
+                            'url' => $vacancyApplicationUrl . '/create',
+                            'method' => $getMethod,
+                        ],
+                        [
+                            'url' => $vacancyApplicationUrl,
+                            'method' => $postMethod,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Edit Vacancy Application',
+                    'route' => [
+                        [
+                            'url' => $vacancyApplicationUrl . '/*/edit',
+                            'method' => $getMethod,
+                        ],
+                        [
+                            'url' => $vacancyApplicationUrl . '/*',
+                            'method' => $putMethod,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Delete Vacancy Application',
+                    'route' => [
+                        'url' => $vacancyApplicationUrl . '/*',
+                        'method' => $deleteMethod,
+                    ],
+                ]
 
+            ],
+        ],
         [
             'name' => ' Events',
             'icon' => "<i class='fa fa-cube'></i>",
@@ -724,7 +775,7 @@ return [
             'name' => 'Settings',
             'icon' => "<i class='fa fa-cogs' aria-hidden='true'></i>",
             'hasSubmodules' => true,
-            'routeIndexNameMultipleSubMenu' => ['configs.index','menus.index'],
+            'routeIndexNameMultipleSubMenu' => ['configs.index', 'menus.index'],
             'submodules' => [
                 [
                     'name' => 'Configs',
