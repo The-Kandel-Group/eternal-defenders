@@ -78,7 +78,9 @@ class Service
         if ($request->file('thumbnail_image')) {
             $data['thumbnail_image'] = $this->fullImageUploadPath . uploadImage($this->fullImageUploadPath, 'thumbnail_image', true,1920 , null);
         }
-
+        if ($request->file('icon')) {
+            $data['icon'] = $this->fullImageUploadPath . uploadImage($this->fullImageUploadPath, 'icon', true, 200, null);
+        }
         return $this->model->create($data);
     }
 
@@ -92,6 +94,7 @@ class Service
         $logoPath = $update->logo ?? null;
         $bannerPath = $update->banner ?? null;
         $thumbnailImage = $update->thumbnail_image ?? null;
+        $icon = $update->icon ?? null;
         if ($request->hasFile('image')) {
             if ($imagePath && file_exists(public_path($imagePath))) {
                 removeImage($imagePath);
@@ -116,6 +119,12 @@ class Service
             }
             $data['thumbnail_image'] = $this->fullImageUploadPath . uploadImage($this->fullImageUploadPath, 'thumbnail_image', true, 1920, null);
         }
+        if ($request->hasFile('icon')) {
+            if ($icon && file_exists(public_path($icon))) {
+                removeImage($icon);
+            }
+            $data['icon'] = $this->fullImageUploadPath . uploadImage($this->fullImageUploadPath, 'icon', true, 1920, null);
+        }
         $update->fill($data)->save();
         $update = $this->itemByIdentifier($id);
 
@@ -131,6 +140,7 @@ class Service
         $logoPath = $item->logo ?? null;
         $bannerPath = $update->banner ?? null;
         $thumbnailImage = $update->thumbnail_image ?? null;
+        $icon = $update->icon ?? null;
         if ($imagePath && file_exists(public_path($imagePath))) {
             removeImage($imagePath);
         }
@@ -142,6 +152,9 @@ class Service
         }
         if ($thumbnailImage && file_exists(public_path($thumbnailImage))) {
             removeImage($thumbnailImage);
+        }
+        if ($icon && file_exists(public_path($icon))) {
+            removeImage($icon);
         }
         return $item->delete();
     }

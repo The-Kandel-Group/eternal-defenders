@@ -24,6 +24,7 @@ $activityUrl = '/activities';
 $partnerUrl = '/partners';
 $vacancyUrl = '/vacancies';
 $vacancyApplicationUrl = '/vacancy-applications';
+$coreValuesUrl = '/core-values';
 
 return [
     // routes entered in this array are accessible by any user no matter what role is given
@@ -183,6 +184,58 @@ return [
 
             ],
         ],
+        [
+            'name' => 'Core Values',
+            'icon' => "<i class='fa fa-campground'></i>",
+            'hasSubmodules' => false,
+            'route' => $coreValuesUrl,
+            'routeIndexName' => 'core-values.index',
+            'routeName' => 'core-values',
+            'permissions' => [
+                [
+                    'name' => 'View Core Values',
+                    'route' => [
+                        'url' => $coreValuesUrl,
+                        'method' => $getMethod,
+                    ],
+                ],
+                [
+                    'name' => 'Create Core Values',
+                    'route' => [
+                        [
+                            'url' => $coreValuesUrl . '/create',
+                            'method' => $getMethod,
+                        ],
+                        [
+                            'url' => $coreValuesUrl,
+                            'method' => $postMethod,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Edit Core Values',
+                    'route' => [
+                        [
+                            'url' => $coreValuesUrl . '/*/edit',
+                            'method' => $getMethod,
+                        ],
+                        [
+                            'url' => $coreValuesUrl . '/*',
+                            'method' => $putMethod,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Delete Core Values',
+                    'route' => [
+                        'url' => $coreValuesUrl . '/*',
+                        'method' => $deleteMethod,
+                    ],
+                ]
+
+            ],
+        ],
+
         [
             'name' => ' Events',
             'icon' => "<i class='fa fa-cube'></i>",

@@ -22,6 +22,7 @@ use App\Http\Controllers\System\FileManagerController;
 use App\Http\Controllers\Public\IndexController;
 use App\Http\Controllers\System\VacancyController;
 use App\Http\Controllers\System\VacancyApplicationController;
+use App\Http\Controllers\System\CoreValuesController;
 
 //Route::get('/', function () {
 //    return view('index');
@@ -74,4 +75,5 @@ Route::prefix(getSystemPrefix())->middleware(['auth', 'permission.routes', 'log'
     Route::post('/ckeditor-upload', [FileManagerController::class, 'ckeditorUpload'])->name('ckeditor.upload')->withoutMiddleware([\Illuminate\Foundation\Http\Middleware\VerifyCsrfToken::class]);
     Route::resource('/vacancies', VacancyController::class);
     Route::resource('/vacancy-applications', VacancyApplicationController::class);
+    Route::resource('/core-values', CoreValuesController::class);
 });
