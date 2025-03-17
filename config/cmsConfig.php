@@ -25,6 +25,7 @@ $partnerUrl = '/partners';
 $vacancyUrl = '/vacancies';
 $vacancyApplicationUrl = '/vacancy-applications';
 $coreValuesUrl = '/core-values';
+$serviceCategoryUrl = '/service-categories';
 
 return [
     // routes entered in this array are accessible by any user no matter what role is given
@@ -235,6 +236,65 @@ return [
 
             ],
         ],
+        [
+            'name' => 'Service',
+            'icon' => "<i class='fa fa-signs-post' aria-hidden='true'></i>",
+            'hasSubmodules' => true,
+            'routeIndexNameMultipleSubMenu' => ['service-categories.index'],
+            'submodules' => [
+                [
+                    'name' => 'Category',
+                    'icon' => '<i class="fa fa-repeat" aria-hidden="true"></i>',
+                    'route' => $serviceCategoryUrl,
+                    'routeIndexName' => 'service-categories.index',
+                    'routeName' => 'service-categories',
+                    'hasSubmodules' => false,
+                    'permissions' => [
+                        [
+                            'name' => 'View Service Category',
+                            'route' => [
+                                'url' => $serviceCategoryUrl,
+                                'method' => $getMethod,
+                            ],
+                        ],
+                        [
+                            'name' => 'Create Service Category',
+                            'route' => [
+                                [
+                                    'url' => $serviceCategoryUrl . '/create',
+                                    'method' => $getMethod,
+                                ],
+                                [
+                                    'url' => $serviceCategoryUrl,
+                                    'method' => $postMethod,
+                                ],
+                            ],
+                        ],
+                        [
+                            'name' => 'Edit Service Category',
+                            'route' => [
+                                [
+                                    'url' => $serviceCategoryUrl . '/*/edit',
+                                    'method' => $getMethod,
+                                ],
+                                [
+                                    'url' => $serviceCategoryUrl . '/*',
+                                    'method' => $putMethod,
+                                ],
+                            ],
+                        ],
+                        [
+                            'name' => 'Delete Service Category',
+                            'route' => [
+                                'url' => $serviceCategoryUrl . '/*',
+                                'method' => $deleteMethod,
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ],
+
 
         [
             'name' => ' Events',
