@@ -70,7 +70,7 @@
 
                     <!-- thumbnail_image (Image) -->
                     <div class="col-md-6">
-                        <label class="form-label" for="thumbnail_image">{{ __('thumbnail_image') }}</label>
+                        <label class="form-label" for="thumbnail_image">{{ __('Thumbnail image') }}</label>
                         <input type="file" name="thumbnail_image" id="thumbnail_image"
                                class="form-control @error('thumbnail_image') is-invalid @enderror">
                         <div class="invalid-feedback">{{ $errors->first('thumbnail_image') }}</div>
