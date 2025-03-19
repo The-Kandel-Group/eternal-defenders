@@ -26,6 +26,7 @@ $vacancyUrl = '/vacancies';
 $vacancyApplicationUrl = '/vacancy-applications';
 $coreValuesUrl = '/core-values';
 $serviceCategoryUrl = '/service-categories';
+$servicesUrl = '/services';
 
 return [
     // routes entered in this array are accessible by any user no matter what role is given
@@ -240,7 +241,7 @@ return [
             'name' => 'Service',
             'icon' => "<i class='fa fa-signs-post' aria-hidden='true'></i>",
             'hasSubmodules' => true,
-            'routeIndexNameMultipleSubMenu' => ['service-categories.index'],
+            'routeIndexNameMultipleSubMenu' => ['service-categories.index','services.index'],
             'submodules' => [
                 [
                     'name' => 'Category',
@@ -287,6 +288,56 @@ return [
                             'name' => 'Delete Service Category',
                             'route' => [
                                 'url' => $serviceCategoryUrl . '/*',
+                                'method' => $deleteMethod,
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Services',
+                    'icon' => '<i class="fa fa-servicestack" aria-hidden="true"></i>',
+                    'route' => $servicesUrl,
+                    'routeIndexName' => 'services.index',
+                    'routeName' => 'services',
+                    'hasSubmodules' => false,
+                    'permissions' => [
+                        [
+                            'name' => 'View Services',
+                            'route' => [
+                                'url' => $serviceCategoryUrl,
+                                'method' => $getMethod,
+                            ],
+                        ],
+                        [
+                            'name' => 'Create Services',
+                            'route' => [
+                                [
+                                    'url' => $servicesUrl . '/create',
+                                    'method' => $getMethod,
+                                ],
+                                [
+                                    'url' => $servicesUrl,
+                                    'method' => $postMethod,
+                                ],
+                            ],
+                        ],
+                        [
+                            'name' => 'Edit Services',
+                            'route' => [
+                                [
+                                    'url' => $servicesUrl . '/*/edit',
+                                    'method' => $getMethod,
+                                ],
+                                [
+                                    'url' => $servicesUrl . '/*',
+                                    'method' => $putMethod,
+                                ],
+                            ],
+                        ],
+                        [
+                            'name' => 'Delete Services',
+                            'route' => [
+                                'url' => $servicesUrl . '/*',
                                 'method' => $deleteMethod,
                             ],
                         ],

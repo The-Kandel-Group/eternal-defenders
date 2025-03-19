@@ -24,6 +24,7 @@ use App\Http\Controllers\System\VacancyController;
 use App\Http\Controllers\System\VacancyApplicationController;
 use App\Http\Controllers\System\CoreValuesController;
 use App\Http\Controllers\System\ServiceCategoryController;
+use App\Http\Controllers\System\ServicesController;
 
 //Route::get('/', function () {
 //    return view('index');
@@ -78,4 +79,5 @@ Route::prefix(getSystemPrefix())->middleware(['auth', 'permission.routes', 'log'
     Route::resource('/vacancy-applications', VacancyApplicationController::class);
     Route::resource('/core-values', CoreValuesController::class);
     Route::resource('/service-categories', ServiceCategoryController::class);
+    Route::resource('/services', ServicesController::class);
 });
