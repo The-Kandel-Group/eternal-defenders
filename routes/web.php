@@ -20,6 +20,7 @@ use App\Http\Controllers\System\ActivityController;
 use App\Http\Controllers\System\PartnerController;
 use App\Http\Controllers\System\FileManagerController;
 use App\Http\Controllers\Public\IndexController;
+use App\Http\Controllers\System\SliderController;
 
 //Route::get('/', function () {
 //    return view('index');
@@ -70,6 +71,7 @@ Route::prefix(getSystemPrefix())->middleware(['auth', 'permission.routes', 'log'
     Route::resource('/activities', ActivityController::class);
     Route::resource('/partners', PartnerController::class);
     Route::post('/ckeditor-upload', [FileManagerController::class, 'ckeditorUpload'])->name('ckeditor.upload')->withoutMiddleware([\Illuminate\Foundation\Http\Middleware\VerifyCsrfToken::class]);
+    Route::resource('/sliders', SliderController::class);
 
 
 });

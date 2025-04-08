@@ -22,6 +22,7 @@ $monitorUrl = '/monitor';
 $redirectionUrl = '/redirections';
 $activityUrl = '/activities';
 $partnerUrl = '/partners';
+$sliderUrl = '/sliders';
 
 return [
     // routes entered in this array are accessible by any user no matter what role is given
@@ -373,6 +374,58 @@ return [
         ],
 
         [
+            'name' => 'Slider',
+            'icon' => "<i class='fa fa-solid fa-sliders'></i>",
+            'hasSubmodules' => false,
+            'route' => $sliderUrl,
+            'routeIndexName' => 'sliders.index',
+            'routeName' => 'sliders',
+            'permissions' => [
+                [
+                    'name' => 'View Slider',
+                    'route' => [
+                        'url' => $sliderUrl,
+                        'method' => $getMethod,
+                    ],
+                ],
+                [
+                    'name' => 'Create Slider',
+                    'route' => [
+                        [
+                            'url' => $sliderUrl . '/create',
+                            'method' => $getMethod,
+                        ],
+                        [
+                            'url' => $sliderUrl,
+                            'method' => $postMethod,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Edit Slider',
+                    'route' => [
+                        [
+                            'url' => $sliderUrl . '/*/edit',
+                            'method' => $getMethod,
+                        ],
+                        [
+                            'url' => $sliderUrl . '/*',
+                            'method' => $putMethod,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Delete Slider',
+                    'route' => [
+                        'url' => $sliderUrl . '/*',
+                        'method' => $deleteMethod,
+                    ],
+                ]
+            ],
+
+        ],
+
+        [
             'name' => 'Team',
             'icon' => "<i class='fa fa-users'></i>",
             'hasSubmodules' => false,
@@ -672,7 +725,7 @@ return [
             'name' => 'Settings',
             'icon' => "<i class='fa fa-cogs' aria-hidden='true'></i>",
             'hasSubmodules' => true,
-            'routeIndexNameMultipleSubMenu' => ['configs.index','menus.index'],
+            'routeIndexNameMultipleSubMenu' => ['configs.index', 'menus.index'],
             'submodules' => [
                 [
                     'name' => 'Configs',
