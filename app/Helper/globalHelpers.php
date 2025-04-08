@@ -249,7 +249,6 @@ function uploadImage($dir, $inputName, $resize = false, $width = null, $height =
 
 function resizeImage($sourcePath, $destinationPath, $targetWidth = null, $targetHeight = null)
 {
-    // Load the image
     list($originalWidth, $originalHeight, $imageType) = getimagesize($sourcePath);
     $image = createImageFromType($sourcePath, $imageType);
 
@@ -272,12 +271,26 @@ function resizeImage($sourcePath, $destinationPath, $targetWidth = null, $target
 
     // Create resized image
     $resizedImage = imagecreatetruecolor($targetWidth, $targetHeight);
-    imagecopyresampled($resizedImage, $image, 0, 0, 0, 0, $targetWidth, $targetHeight, $originalWidth, $originalHeight);
 
-    // Save the resized image
+    // Handle transparency for PNG and GIF
+    if ($imageType == IMAGETYPE_PNG || $imageType == IMAGETYPE_GIF) {
+        imagecolortransparent($resizedImage, imagecolorallocatealpha($resizedImage, 0, 0, 0, 127));
+        imagealphablending($resizedImage, false);
+        imagesavealpha($resizedImage, true);
+    }
+
+    imagecopyresampled(
+        $resizedImage,
+        $image,
+        0, 0, 0, 0,
+        $targetWidth,
+        $targetHeight,
+        $originalWidth,
+        $originalHeight
+    );
+
     saveImageFromType($resizedImage, $destinationPath, $imageType);
 
-    // Free memory
     imagedestroy($image);
     imagedestroy($resizedImage);
 }
