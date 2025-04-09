@@ -25,20 +25,15 @@
                     </div>
 
                     <div class="col-md-6">
-                        <label class="form-label" for="thumbnail_image">Thumbnail Image</label>
-                        <input type="file" name="thumbnail_image" id="thumbnail_image" class="form-control @error('thumbnail_image') is-invalid @enderror">
-                        @if($thisData->thumbnail_image)
-                            <img src="{{ asset($thisData->thumbnail_image) }}" class="img-thumbnail mt-2" style="max-width: 150px;">
-                        @endif
-                        @error('thumbnail_image') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                    </div>
-
-                    <div class="col-md-6">
                         <label class="form-label" for="timer">Timer (seconds)</label>
                         <input type="number" step="0.01" name="timer" id="timer" value="{{ $thisData->timer }}" class="form-control @error('timer') is-invalid @enderror" placeholder="e.g. 3.5">
                         @error('timer') <div class="invalid-feedback">{{ $message }}</div> @enderror
                     </div>
-
+                    <div class="col-md-6">
+                        <label class="form-label" for="button2_label">Position</label>
+                        <input type="number" name="position" id="position" value="{{ $thisData->position??old('position') }}" class="form-control @error('position') is-invalid @enderror">
+                        <div class="invalid-feedback">{{ $errors->first('position') }}</div>
+                    </div>
                     <!-- Button 1 -->
                     <div class="col-md-3">
                         <label class="form-label" for="button1_label">Button 1 Label</label>
@@ -88,11 +83,7 @@
                         <input type="text" name="button2_icon" id="button2_icon" value="{{ $thisData->button2_icon }}" class="form-control @error('button2_icon') is-invalid @enderror">
                         @error('button2_icon') <div class="invalid-feedback">{{ $message }}</div> @enderror
                     </div>
-                    <div class="col-md-3">
-                        <label class="form-label" for="button2_label">Position</label>
-                        <input type="text" name="position" id="position" value="{{ $thisData->position??old('position') }}" class="form-control @error('position') is-invalid @enderror">
-                        <div class="invalid-feedback">{{ $errors->first('position') }}</div>
-                    </div>
+
                     <!-- Short Description -->
                     <div class="col-md-6">
                         <label class="form-label" for="short_description">Short Description</label>
@@ -103,8 +94,17 @@
                     <!-- Long Description -->
                     <div class="col-md-6">
                         <label class="form-label" for="long_description">Long Description</label>
-                        <textarea name="long_description" id="long_description" rows="3" class="form-control text-editor @error('long_description') is-invalid @enderror">{{ $thisData->long_description }}</textarea>
+                        <textarea name="long_description" id="long_description" rows="3" class="form-control @error('long_description') is-invalid @enderror">{{ $thisData->long_description }}</textarea>
                         @error('long_description') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label" for="thumbnail_image">Thumbnail Image</label>
+                        <input type="file" name="thumbnail_image" id="thumbnail_image" class="form-control @error('thumbnail_image') is-invalid @enderror">
+                        @if($thisData->thumbnail_image)
+                            <img src="{{ asset($thisData->thumbnail_image) }}" class="img-thumbnail mt-2" style="max-width: 150px;">
+                        @endif
+                        @error('thumbnail_image') <div class="invalid-feedback">{{ $message }}</div> @enderror
                     </div>
 
                     <!-- Status -->

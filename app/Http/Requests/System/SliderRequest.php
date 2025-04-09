@@ -27,7 +27,7 @@ class SliderRequest extends FormRequest
             $validate = [
                 'title' => 'nullable|string',
                 'sub_title' => 'nullable|string',
-                'thumbnail_image' => 'nullable|string',
+                'thumbnail_image' => 'nullable|image|max:2024',
                 'timer' => 'nullable|numeric',
                 'button1_label' => 'nullable|string',
                 'button1_link' => 'nullable|string',

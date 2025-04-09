@@ -24,12 +24,7 @@
                         <div class="invalid-feedback">{{ $errors->first('sub_title') }}</div>
                     </div>
 
-                    <!-- Thumbnail Image -->
-                    <div class="col-md-6">
-                        <label class="form-label" for="thumbnail_image">Thumbnail Image</label>
-                        <input type="file" name="thumbnail_image" id="thumbnail_image" class="form-control @error('thumbnail_image') is-invalid @enderror">
-                        <div class="invalid-feedback">{{ $errors->first('thumbnail_image') }}</div>
-                    </div>
+
 
                     <!-- Timer -->
                     <div class="col-md-6">
@@ -37,7 +32,11 @@
                         <input type="number" step="0.1" name="timer" id="timer" value="{{ old('timer') }}" class="form-control @error('timer') is-invalid @enderror" placeholder="e.g., 5.0">
                         <div class="invalid-feedback">{{ $errors->first('timer') }}</div>
                     </div>
-
+                    <div class="col-md-6">
+                        <label class="form-label" for="button2_label">Position</label>
+                        <input type="number" name="position" id="position" value="{{ old('position') }}" class="form-control @error('position') is-invalid @enderror">
+                        <div class="invalid-feedback">{{ $errors->first('position') }}</div>
+                    </div>
                     <!-- Button 1 -->
                     <div class="col-md-3">
                         <label class="form-label" for="button1_label">Button 1 Label</label>
@@ -88,11 +87,7 @@
                         <div class="invalid-feedback">{{ $errors->first('button2_icon') }}</div>
                     </div>
 
-                    <div class="col-md-3">
-                        <label class="form-label" for="button2_label">Position</label>
-                        <input type="text" name="position" id="position" value="{{ old('position') }}" class="form-control @error('position') is-invalid @enderror">
-                        <div class="invalid-feedback">{{ $errors->first('position') }}</div>
-                    </div>
+
                     <!-- Short Description -->
                     <div class="col-md-6">
                         <label class="form-label" for="short_description">Short Description</label>
@@ -107,6 +102,12 @@
                         <div class="invalid-feedback">{{ $errors->first('long_description') }}</div>
                     </div>
 
+                    <!-- Thumbnail Image -->
+                    <div class="col-md-6">
+                        <label class="form-label" for="thumbnail_image">Thumbnail Image</label>
+                        <input type="file" name="thumbnail_image" id="thumbnail_image" class="form-control @error('thumbnail_image') is-invalid @enderror">
+                        <div class="invalid-feedback">{{ $errors->first('thumbnail_image') }}</div>
+                    </div>
                     <!-- Status -->
                     <div class="col-md-6">
                         <label class="form-label w-100" for="status">Status</label>
