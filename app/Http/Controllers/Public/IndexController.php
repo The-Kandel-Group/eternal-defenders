@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Public;
 
 use App\Http\Controllers\Controller;
 use App\Models\Page;
+use App\Models\ServiceCategory;
 
 
 class IndexController extends Controller
@@ -27,8 +28,14 @@ class IndexController extends Controller
     {
         try {
             $data = [];
+            $data['serviceCategories'] = ServiceCategory::where('status', 1)
+                ->with(['services' => function($query) {
+                    $query->where('status', 1);
+                }])
+                ->get();
             return view('frontend.index', $data);
         } catch (\Throwable $th) {
+            dd($th);
         }
     }
 

@@ -123,329 +123,390 @@
                 </div>
 
                 <div id="tsum-tabs" class="wow slideInLeft" style="visibility: visible; animation-name: slideInLeft;">
-                    @foreach($serviceCategories as $serviceCategoriesKey=> $serviceCategoriesDatum)
-                        @php $serviceCategoriesKey = $serviceCategoriesKey + 1; @endphp
-                        <input id="tab{{$serviceCategoriesKey}}" type="radio" name="tabs" checked="">
-                        <label for="tab{{$serviceCategoriesKey}}"
-                               class="Effective-sec-item mb-lg-0 Effective-sec-item-title Effective-sec-item-img">
-                            <img src="{{ asset($serviceCategoriesDatum?->icon) }}"
-                                 alt="tab-icon{{$serviceCategoriesKey}}" class="img-fluid">
-                            <span class="mb-0 d-block">{{$serviceCategoriesDatum?->title}}</span>
-                        </label>
-
-                    @endforeach
-
-                        @foreach($serviceCategories as $serviceCategoriesKey=> $serviceCategoriesDatum)
-                            @php $serviceCategoriesKey = $serviceCategoriesKey + 1; @endphp
-
-                            <section id="content{{$serviceCategoriesKey}}">
-                                <div class="tabs-content">
-                                    <div class="row">
-                                        <div class="col-lg-7 col-md-7 col-12">
-                                            <h3>{{$serviceCategoriesDatum?->title}}</h3>
-                                            <h5>{{$serviceCategoriesDatum?->sub_title}}</h5>
-                                            <div class="tab-description">
-                                                <p>{{$serviceCategoriesDatum?->description}}</p>
-                                                <h4 class="text-white my-3">Our Distinct Edge</h4>
-
-                                                @foreach($serviceCategoriesDatum->services as $servicesKey => $servicesDatum)
-                                                    <div class="py-2 px-3 mb-3"
-                                                         style="background: rgba(255, 255, 255, 0.1); border-radius: 10px;">
-                                                        <div class="row align-items-center">
-                                                            <div class="col-1 pr-2">
-                                                                <h5 class="m-0"><i class="fas fa-stopwatch fa-2x"></i></h5>
-                                                            </div>
-                                                            <div class="col-3 pl-2">
-                                                                <h5 class="m-0">{{$servicesDatum->title}}</h5>
-                                                            </div>
-                                                            <div class="col-8">
-                                                                <p>{{$servicesDatum->sub_title}}</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                @endforeach
+                    <input id="tab1" type="radio" name="tabs" checked="">
+                    <label for="tab1"
+                           class="Effective-sec-item mb-lg-0 Effective-sec-item-title Effective-sec-item-img">
+                        <img src="{{ asset('frontend/assets/image/tab-icon1.png') }}" alt="tab-icon1" class="img-fluid">
+                        <span class="mb-0 d-block">24/7 SOC Monitoring</span>
+                    </label>
+                    <input id="tab2" type="radio" name="tabs">
+                    <label for="tab2"
+                           class="Effective-sec-item mb-lg-0 Effective-sec-item-title Effective-sec-item-img">
+                        <img src="{{ asset('frontend/assets/image/tab-icon2.png') }}" alt="tab-icon2" class="img-fluid">
+                        <span class="mb-0 d-block">Penetration Testing</span>
+                    </label>
+                    <input id="tab3" type="radio" name="tabs">
+                    <label for="tab3" class="Effective-sec-item mb-0 Effective-sec-item-title Effective-sec-item-img">
+                        <img src="{{ asset('frontend/assets/image/tab-icon3.png') }}" alt="tab-icon3" class="img-fluid">
+                        <span class="mb-0 d-block">Vulnerability Management</span>
+                    </label>
+                    <input id="tab4" type="radio" name="tabs">
+                    <label for="tab4" class="Effective-sec-item mb-0 Effective-sec-item-title Effective-sec-item-img">
+                        <img src="{{ asset('frontend/assets/image/tab-icon4.png') }}" alt="tab-icon4" class="img-fluid">
+                        <span class="mb-0 d-block">Compliance Audits</span>
+                    </label>
+                    <section id="content1">
+                        <div class="tabs-content">
+                            <div class="row">
+                                <div class="col-lg-7 col-md-7 col-12">
+                                    <h3>24/7 SOC Monitoring</h3>
+                                    <h5>Comprehensive Threat Detection and Response</h5>
+                                    <div class="tab-description">
+                                        <p>Our Security Operations Center (SOC) provides continuous monitoring and rapid
+                                            incident response to keep your digital assets secure.</p>
+                                        <h4 class="text-white my-3">Our Distinct Edge</h4>
+                                        <div class="py-2 px-3 mb-3"
+                                             style="background: rgba(255, 255, 255, 0.1); border-radius: 10px;">
+                                            <div class="row align-items-center">
+                                                <div class="col-1 pr-2">
+                                                    <h5 class="m-0"><i class="fas fa-stopwatch fa-2x"></i></h5>
+                                                </div>
+                                                <div class="col-3 pl-2">
+                                                    <h5 class="m-0">Unmatched Vigilance</h5>
+                                                </div>
+                                                <div class="col-8">
+                                                    <p>Continuous, proactive monitoring with advanced AI analytics.</p>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-5 col-lg-5 col-md-5 col-12">
-                                            <div class="tab-sec-img">
-                                                <figure class="mb-0">
-                                                    <img src="{{ asset($serviceCategoriesDatum->thumbnail_image) }}"
-                                                         alt="tabs-sec-img{{$serviceCategoriesKey}}"
-                                                         class="img-fluid mt-lg-0 mt-md-0 mt-3">
-                                                </figure>
+
+                                        <div class="py-2 px-3 mb-3"
+                                             style="background: rgba(255, 255, 255, 0.1); border-radius: 10px;">
+                                            <div class="row align-items-center">
+                                                <div class="col-1 pr-2">
+                                                    <h5 class="m-0"><i class="fas fa-user-shield fa-2x"></i></h5>
+                                                </div>
+                                                <div class="col-3 pl-2">
+                                                    <h5 class="m-0">Skilled Expertise</h5>
+                                                </div>
+                                                <div class="col-8">
+                                                    <p>Our team of certified analysts brings deep industry
+                                                        knowledge.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="py-2 px-3 mb-3"
+                                             style="background: rgba(255, 255, 255, 0.1); border-radius: 10px;">
+                                            <div class="row align-items-center">
+                                                <div class="col-1 pr-2">
+                                                    <h5 class="m-0"><i class="fas fa-rocket fa-2x"></i></h5>
+                                                </div>
+                                                <div class="col-3 pl-2">
+                                                    <h5 class="m-0">Rapid Response</h5>
+                                                </div>
+                                                <div class="col-8">
+                                                    <p>Swift and efficient incident response to neutralize threats.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="py-2 px-3 mb-3"
+                                             style="background: rgba(255, 255, 255, 0.1); border-radius: 10px;">
+                                            <div class="row align-items-center">
+                                                <div class="col-1 pr-2">
+                                                    <h5 class="m-0"><i class="fas fa-chart-pie fa-2x"></i></h5>
+                                                </div>
+                                                <div class="col-3 pl-2">
+                                                    <h5 class="m-0">Actionable Intelligence</h5>
+                                                </div>
+                                                <div class="col-8">
+                                                    <p>Transparent reporting with insights that drive effective
+                                                        decisions.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="py-2 px-3 mb-3"
+                                             style="background: rgba(255, 255, 255, 0.1); border-radius: 10px;">
+                                            <div class="row align-items-center">
+                                                <div class="col-1 pr-2">
+                                                    <h5 class="m-0"><i class="fas fa-award fa-2x"></i></h5>
+                                                </div>
+                                                <div class="col-3 pl-2">
+                                                    <h5 class="m-0">Proven Track Record</h5>
+                                                </div>
+                                                <div class="col-8">
+                                                    <p>Trusted by industry leaders with demonstrable success.</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </section>
+                                <div class="col-lg-5 col-lg-5 col-md-5 col-12">
+                                    <div class="tab-sec-img">
+                                        <figure class="mb-0">
+                                            <img src="{{ asset('frontend/assets/image/soc-monitoring.png') }}"
+                                                 alt="tabs-sec-img1" class="img-fluid mt-lg-0 mt-md-0 mt-3">
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="content2">
+                        <div class="tabs-content">
+                            <div class="row">
+                                <div class="col-lg-7 col-md-7 col-12">
+                                    <h3>Penetration Testing</h3>
+                                    <h5>Advanced security testing tailored to your digital ecosystem.</h5>
+                                    <div class="tab-description">
+                                        {{-- <p>Our Security Operations Center (SOC) provides continuous monitoring and rapid incident response to keep your digital assets secure.</p> --}}
+                                        <h4 class="text-white my-3">Our Distinct Edge</h4>
+                                        <div class="py-2 px-3 mb-3"
+                                             style="background: rgba(255, 255, 255, 0.1); border-radius: 10px;">
+                                            <div class="row align-items-center">
+                                                <div class="col-1 pr-2">
+                                                    <h5 class="m-0"><i class="fas fa-user-shield fa-2x"></i></h5>
+                                                </div>
+                                                <div class="col-3 pl-2">
+                                                    <h5 class="m-0">Unmatched Expertise</h5>
+                                                </div>
+                                                <div class="col-8">
+                                                    <p>Elite cybersecurity professionals on our team.</p>
+                                                </div>
+                                            </div>
+                                        </div>
 
-                        @endforeach
+                                        <div class="py-2 px-3 mb-3"
+                                             style="background: rgba(255, 255, 255, 0.1); border-radius: 10px;">
+                                            <div class="row align-items-center">
+                                                <div class="col-1 pr-2">
+                                                    <h5 class="m-0"><i class="fas fa-cogs fa-2x"></i></h5>
+                                                </div>
+                                                <div class="col-3 pl-2">
+                                                    <h5 class="m-0">Comprehensive Testing</h5>
+                                                </div>
+                                                <div class="col-8">
+                                                    <p>In-depth manual and automated vulnerability assessments.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="py-2 px-3 mb-3"
+                                             style="background: rgba(255, 255, 255, 0.1); border-radius: 10px;">
+                                            <div class="row align-items-center">
+                                                <div class="col-1 pr-2">
+                                                    <h5 class="m-0"><i class="fas fa-handshake fa-2x"></i></h5>
+                                                </div>
+                                                <div class="col-3 pl-2">
+                                                    <h5 class="m-0">Tailored Solutions</h5>
+                                                </div>
+                                                <div class="col-8">
+                                                    <p>Customized strategies for remediation and risk mitigation.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="py-2 px-3 mb-3"
+                                             style="background: rgba(255, 255, 255, 0.1); border-radius: 10px;">
+                                            <div class="row align-items-center">
+                                                <div class="col-1 pr-2">
+                                                    <h5 class="m-0"><i class="fas fa-file-alt fa-2x"></i></h5>
+                                                </div>
+                                                <div class="col-3 pl-2">
+                                                    <h5 class="m-0">Actionable Reports</h5>
+                                                </div>
+                                                <div class="col-8">
+                                                    <p>Clear insights with step-by-step guidance.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="py-2 px-3 mb-3"
+                                             style="background: rgba(255, 255, 255, 0.1); border-radius: 10px;">
+                                            <div class="row align-items-center">
+                                                <div class="col-1 pr-2">
+                                                    <h5 class="m-0"><i class="fas fa-globe fa-2x"></i></h5>
+                                                </div>
+                                                <div class="col-3 pl-2">
+                                                    <h5 class="m-0">Global Reach</h5>
+                                                </div>
+                                                <div class="col-8">
+                                                    <p>Secure testing across diverse environments.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 col-md-5 col-12">
+                                    <div class="tab-sec-img">
+                                        <figure class="mb-0">
+                                            <img src="{{asset('frontend/assets/image/tabs-content-img2.png')}}"
+                                                 alt="tabs-content-img2"
+                                                 class="img-fluid mt-lg-0 mt-md-0 mt-3">
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="content3">
+                        <div class="tabs-content">
+                            <div class="row">
+                                <div class="col-lg-7 col-md-7 col-12">
+                                    <h3>Vulnerability Management</h3>
+                                    <h5>Proactively Secure Your Systems with Regular Assessments</h5>
+                                    <div class="tab-description">
+                                        <p>Our Vulnerability Management service continuously assesses and prioritizes
+                                            risks
+                                            to ensure your systems remain secure.</p>
+                                        <h4 class="text-white my-3">Our Distinct Edge</h4>
+                                        <div class="py-2 px-3 mb-3"
+                                             style="background: rgba(255, 255, 255, 0.1); border-radius: 10px;">
+                                            <div class="row align-items-center">
+                                                <div class="col-1 pr-2">
+                                                    <h5 class="m-0"><i class="fas fa-globe fa-2x"></i></h5>
+                                                </div>
+                                                <div class="col-3 pl-2">
+                                                    <h5 class="m-0">Continuous Insight</h5>
+                                                </div>
+                                                <div class="col-8">
+                                                    <p>Real-time monitoring for emerging vulnerabilities.</p>
+                                                </div>
+                                            </div>
+                                        </div>
 
-                    {{--                    <section id="content2">--}}
-                    {{--                        <div class="tabs-content">--}}
-                    {{--                            <div class="row">--}}
-                    {{--                                <div class="col-lg-7 col-md-7 col-12">--}}
-                    {{--                                    <h3>Penetration Testing</h3>--}}
-                    {{--                                    <h5>Advanced security testing tailored to your digital ecosystem.</h5>--}}
-                    {{--                                    <div class="tab-description">--}}
-                    {{--                                        --}}{{-- <p>Our Security Operations Center (SOC) provides continuous monitoring and rapid incident response to keep your digital assets secure.</p> --}}
-                    {{--                                        <h4 class="text-white my-3">Our Distinct Edge</h4>--}}
-                    {{--                                        <div class="py-2 px-3 mb-3"--}}
-                    {{--                                             style="background: rgba(255, 255, 255, 0.1); border-radius: 10px;">--}}
-                    {{--                                            <div class="row align-items-center">--}}
-                    {{--                                                <div class="col-1 pr-2">--}}
-                    {{--                                                    <h5 class="m-0"><i class="fas fa-user-shield fa-2x"></i></h5>--}}
-                    {{--                                                </div>--}}
-                    {{--                                                <div class="col-3 pl-2">--}}
-                    {{--                                                    <h5 class="m-0">Unmatched Expertise</h5>--}}
-                    {{--                                                </div>--}}
-                    {{--                                                <div class="col-8">--}}
-                    {{--                                                    <p>Elite cybersecurity professionals on our team.</p>--}}
-                    {{--                                                </div>--}}
-                    {{--                                            </div>--}}
-                    {{--                                        </div>--}}
+                                        <div class="py-2 px-3 mb-3"
+                                             style="background: rgba(255, 255, 255, 0.1); border-radius: 10px;">
+                                            <div class="row align-items-center">
+                                                <div class="col-1 pr-2">
+                                                    <h5 class="m-0"><i class="fas fa-fire-alt fa-2x"></i></h5>
+                                                </div>
+                                                <div class="col-3 pl-2">
+                                                    <h5 class="m-0">Prioritized Action</h5>
+                                                </div>
+                                                <div class="col-8">
+                                                    <p>Immediate focus on high-risk issues with risk-based
+                                                        prioritization.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="py-2 px-3 mb-3"
+                                             style="background: rgba(255, 255, 255, 0.1); border-radius: 10px;">
+                                            <div class="row align-items-center">
+                                                <div class="col-1 pr-2">
+                                                    <h5 class="m-0"><i class="fas fa-plug fa-2x"></i></h5>
+                                                </div>
+                                                <div class="col-3 pl-2">
+                                                    <h5 class="m-0">Effortless Integration</h5>
+                                                </div>
+                                                <div class="col-8">
+                                                    <p>Seamlessly incorporated into your existing IT systems.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="py-2 px-3 mb-3"
+                                             style="background: rgba(255, 255, 255, 0.1); border-radius: 10px;">
+                                            <div class="row align-items-center">
+                                                <div class="col-1 pr-2">
+                                                    <h5 class="m-0"><i class="fas fa-chart-line fa-2x"></i></h5>
+                                                </div>
+                                                <div class="col-3 pl-2">
+                                                    <h5 class="m-0">Data-Driven Approach</h5>
+                                                </div>
+                                                <div class="col-8">
+                                                    <p>Leveraging analytics to guide remediation strategies.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 col-md-5 col-12">
+                                    <div class="tab-sec-img">
+                                        <figure class="mb-0">
+                                            <img src="{{ asset('frontend/assets/image/vulnerability-management.png') }}"
+                                                 alt="tabs-content-img2" class="img-fluid mt-lg-0 mt-md-0 mt-3">
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="content4">
+                        <div class="tabs-content">
+                            <div class="row">
+                                <div class="col-lg-7 col-md-7 col-12">
+                                    <h3>Compliance Audits</h3>
+                                    <h5>Ensure Your Business Meets Industry Standards and Regulatory Requirements</h5>
+                                    <div class="tab-description">
+                                        <p>Our Compliance Audit service helps you navigate complex regulatory
+                                            requirements
+                                            and ensure your security controls are aligned with industry standards.</p>
+                                        <h4 class="text-white my-3">Our Distinct Edge</h4>
+                                        <div class="py-2 px-3 mb-3"
+                                             style="background: rgba(255, 255, 255, 0.1); border-radius: 10px;">
+                                            <div class="row align-items-center">
+                                                <div class="col-1 pr-2">
+                                                    <h5 class="m-0"><i class="fas fa-user-tie fa-2x"></i></h5>
+                                                </div>
+                                                <div class="col-3 pl-2">
+                                                    <h5 class="m-0">Regulatory Expertise</h5>
+                                                </div>
+                                                <div class="col-8">
+                                                    <p>Deep knowledge across multiple frameworks including GDPR, HIPAA,
+                                                        PCI
+                                                        DSS, and more.</p>
+                                                </div>
+                                            </div>
+                                        </div>
 
-                    {{--                                        <div class="py-2 px-3 mb-3"--}}
-                    {{--                                             style="background: rgba(255, 255, 255, 0.1); border-radius: 10px;">--}}
-                    {{--                                            <div class="row align-items-center">--}}
-                    {{--                                                <div class="col-1 pr-2">--}}
-                    {{--                                                    <h5 class="m-0"><i class="fas fa-cogs fa-2x"></i></h5>--}}
-                    {{--                                                </div>--}}
-                    {{--                                                <div class="col-3 pl-2">--}}
-                    {{--                                                    <h5 class="m-0">Comprehensive Testing</h5>--}}
-                    {{--                                                </div>--}}
-                    {{--                                                <div class="col-8">--}}
-                    {{--                                                    <p>In-depth manual and automated vulnerability assessments.</p>--}}
-                    {{--                                                </div>--}}
-                    {{--                                            </div>--}}
-                    {{--                                        </div>--}}
-                    {{--                                        <div class="py-2 px-3 mb-3"--}}
-                    {{--                                             style="background: rgba(255, 255, 255, 0.1); border-radius: 10px;">--}}
-                    {{--                                            <div class="row align-items-center">--}}
-                    {{--                                                <div class="col-1 pr-2">--}}
-                    {{--                                                    <h5 class="m-0"><i class="fas fa-handshake fa-2x"></i></h5>--}}
-                    {{--                                                </div>--}}
-                    {{--                                                <div class="col-3 pl-2">--}}
-                    {{--                                                    <h5 class="m-0">Tailored Solutions</h5>--}}
-                    {{--                                                </div>--}}
-                    {{--                                                <div class="col-8">--}}
-                    {{--                                                    <p>Customized strategies for remediation and risk mitigation.</p>--}}
-                    {{--                                                </div>--}}
-                    {{--                                            </div>--}}
-                    {{--                                        </div>--}}
-                    {{--                                        <div class="py-2 px-3 mb-3"--}}
-                    {{--                                             style="background: rgba(255, 255, 255, 0.1); border-radius: 10px;">--}}
-                    {{--                                            <div class="row align-items-center">--}}
-                    {{--                                                <div class="col-1 pr-2">--}}
-                    {{--                                                    <h5 class="m-0"><i class="fas fa-file-alt fa-2x"></i></h5>--}}
-                    {{--                                                </div>--}}
-                    {{--                                                <div class="col-3 pl-2">--}}
-                    {{--                                                    <h5 class="m-0">Actionable Reports</h5>--}}
-                    {{--                                                </div>--}}
-                    {{--                                                <div class="col-8">--}}
-                    {{--                                                    <p>Clear insights with step-by-step guidance.</p>--}}
-                    {{--                                                </div>--}}
-                    {{--                                            </div>--}}
-                    {{--                                        </div>--}}
-                    {{--                                        <div class="py-2 px-3 mb-3"--}}
-                    {{--                                             style="background: rgba(255, 255, 255, 0.1); border-radius: 10px;">--}}
-                    {{--                                            <div class="row align-items-center">--}}
-                    {{--                                                <div class="col-1 pr-2">--}}
-                    {{--                                                    <h5 class="m-0"><i class="fas fa-globe fa-2x"></i></h5>--}}
-                    {{--                                                </div>--}}
-                    {{--                                                <div class="col-3 pl-2">--}}
-                    {{--                                                    <h5 class="m-0">Global Reach</h5>--}}
-                    {{--                                                </div>--}}
-                    {{--                                                <div class="col-8">--}}
-                    {{--                                                    <p>Secure testing across diverse environments.</p>--}}
-                    {{--                                                </div>--}}
-                    {{--                                            </div>--}}
-                    {{--                                        </div>--}}
-                    {{--                                    </div>--}}
-                    {{--                                </div>--}}
-                    {{--                                <div class="col-lg-5 col-md-5 col-12">--}}
-                    {{--                                    <div class="tab-sec-img">--}}
-                    {{--                                        <figure class="mb-0">--}}
-                    {{--                                            <img src="{{asset('frontend/assets/image/tabs-content-img2.png')}}"--}}
-                    {{--                                                 alt="tabs-content-img2"--}}
-                    {{--                                                 class="img-fluid mt-lg-0 mt-md-0 mt-3">--}}
-                    {{--                                        </figure>--}}
-                    {{--                                    </div>--}}
-                    {{--                                </div>--}}
-                    {{--                            </div>--}}
-                    {{--                        </div>--}}
-                    {{--                    </section>--}}
-                    {{--                    <section id="content3">--}}
-                    {{--                        <div class="tabs-content">--}}
-                    {{--                            <div class="row">--}}
-                    {{--                                <div class="col-lg-7 col-md-7 col-12">--}}
-                    {{--                                    <h3>Vulnerability Management</h3>--}}
-                    {{--                                    <h5>Proactively Secure Your Systems with Regular Assessments</h5>--}}
-                    {{--                                    <div class="tab-description">--}}
-                    {{--                                        <p>Our Vulnerability Management service continuously assesses and prioritizes--}}
-                    {{--                                            risks--}}
-                    {{--                                            to ensure your systems remain secure.</p>--}}
-                    {{--                                        <h4 class="text-white my-3">Our Distinct Edge</h4>--}}
-                    {{--                                        <div class="py-2 px-3 mb-3"--}}
-                    {{--                                             style="background: rgba(255, 255, 255, 0.1); border-radius: 10px;">--}}
-                    {{--                                            <div class="row align-items-center">--}}
-                    {{--                                                <div class="col-1 pr-2">--}}
-                    {{--                                                    <h5 class="m-0"><i class="fas fa-globe fa-2x"></i></h5>--}}
-                    {{--                                                </div>--}}
-                    {{--                                                <div class="col-3 pl-2">--}}
-                    {{--                                                    <h5 class="m-0">Continuous Insight</h5>--}}
-                    {{--                                                </div>--}}
-                    {{--                                                <div class="col-8">--}}
-                    {{--                                                    <p>Real-time monitoring for emerging vulnerabilities.</p>--}}
-                    {{--                                                </div>--}}
-                    {{--                                            </div>--}}
-                    {{--                                        </div>--}}
-
-                    {{--                                        <div class="py-2 px-3 mb-3"--}}
-                    {{--                                             style="background: rgba(255, 255, 255, 0.1); border-radius: 10px;">--}}
-                    {{--                                            <div class="row align-items-center">--}}
-                    {{--                                                <div class="col-1 pr-2">--}}
-                    {{--                                                    <h5 class="m-0"><i class="fas fa-fire-alt fa-2x"></i></h5>--}}
-                    {{--                                                </div>--}}
-                    {{--                                                <div class="col-3 pl-2">--}}
-                    {{--                                                    <h5 class="m-0">Prioritized Action</h5>--}}
-                    {{--                                                </div>--}}
-                    {{--                                                <div class="col-8">--}}
-                    {{--                                                    <p>Immediate focus on high-risk issues with risk-based--}}
-                    {{--                                                        prioritization.</p>--}}
-                    {{--                                                </div>--}}
-                    {{--                                            </div>--}}
-                    {{--                                        </div>--}}
-                    {{--                                        <div class="py-2 px-3 mb-3"--}}
-                    {{--                                             style="background: rgba(255, 255, 255, 0.1); border-radius: 10px;">--}}
-                    {{--                                            <div class="row align-items-center">--}}
-                    {{--                                                <div class="col-1 pr-2">--}}
-                    {{--                                                    <h5 class="m-0"><i class="fas fa-plug fa-2x"></i></h5>--}}
-                    {{--                                                </div>--}}
-                    {{--                                                <div class="col-3 pl-2">--}}
-                    {{--                                                    <h5 class="m-0">Effortless Integration</h5>--}}
-                    {{--                                                </div>--}}
-                    {{--                                                <div class="col-8">--}}
-                    {{--                                                    <p>Seamlessly incorporated into your existing IT systems.</p>--}}
-                    {{--                                                </div>--}}
-                    {{--                                            </div>--}}
-                    {{--                                        </div>--}}
-                    {{--                                        <div class="py-2 px-3 mb-3"--}}
-                    {{--                                             style="background: rgba(255, 255, 255, 0.1); border-radius: 10px;">--}}
-                    {{--                                            <div class="row align-items-center">--}}
-                    {{--                                                <div class="col-1 pr-2">--}}
-                    {{--                                                    <h5 class="m-0"><i class="fas fa-chart-line fa-2x"></i></h5>--}}
-                    {{--                                                </div>--}}
-                    {{--                                                <div class="col-3 pl-2">--}}
-                    {{--                                                    <h5 class="m-0">Data-Driven Approach</h5>--}}
-                    {{--                                                </div>--}}
-                    {{--                                                <div class="col-8">--}}
-                    {{--                                                    <p>Leveraging analytics to guide remediation strategies.</p>--}}
-                    {{--                                                </div>--}}
-                    {{--                                            </div>--}}
-                    {{--                                        </div>--}}
-                    {{--                                    </div>--}}
-                    {{--                                </div>--}}
-                    {{--                                <div class="col-lg-5 col-md-5 col-12">--}}
-                    {{--                                    <div class="tab-sec-img">--}}
-                    {{--                                        <figure class="mb-0">--}}
-                    {{--                                            <img src="{{ asset('frontend/assets/image/vulnerability-management.png') }}"--}}
-                    {{--                                                 alt="tabs-content-img2" class="img-fluid mt-lg-0 mt-md-0 mt-3">--}}
-                    {{--                                        </figure>--}}
-                    {{--                                    </div>--}}
-                    {{--                                </div>--}}
-                    {{--                            </div>--}}
-                    {{--                        </div>--}}
-                    {{--                    </section>--}}
-                    {{--                    <section id="content4">--}}
-                    {{--                        <div class="tabs-content">--}}
-                    {{--                            <div class="row">--}}
-                    {{--                                <div class="col-lg-7 col-md-7 col-12">--}}
-                    {{--                                    <h3>Compliance Audits</h3>--}}
-                    {{--                                    <h5>Ensure Your Business Meets Industry Standards and Regulatory Requirements</h5>--}}
-                    {{--                                    <div class="tab-description">--}}
-                    {{--                                        <p>Our Compliance Audit service helps you navigate complex regulatory--}}
-                    {{--                                            requirements--}}
-                    {{--                                            and ensure your security controls are aligned with industry standards.</p>--}}
-                    {{--                                        <h4 class="text-white my-3">Our Distinct Edge</h4>--}}
-                    {{--                                        <div class="py-2 px-3 mb-3"--}}
-                    {{--                                             style="background: rgba(255, 255, 255, 0.1); border-radius: 10px;">--}}
-                    {{--                                            <div class="row align-items-center">--}}
-                    {{--                                                <div class="col-1 pr-2">--}}
-                    {{--                                                    <h5 class="m-0"><i class="fas fa-user-tie fa-2x"></i></h5>--}}
-                    {{--                                                </div>--}}
-                    {{--                                                <div class="col-3 pl-2">--}}
-                    {{--                                                    <h5 class="m-0">Regulatory Expertise</h5>--}}
-                    {{--                                                </div>--}}
-                    {{--                                                <div class="col-8">--}}
-                    {{--                                                    <p>Deep knowledge across multiple frameworks including GDPR, HIPAA,--}}
-                    {{--                                                        PCI--}}
-                    {{--                                                        DSS, and more.</p>--}}
-                    {{--                                                </div>--}}
-                    {{--                                            </div>--}}
-                    {{--                                        </div>--}}
-
-                    {{--                                        <div class="py-2 px-3 mb-3"--}}
-                    {{--                                             style="background: rgba(255, 255, 255, 0.1); border-radius: 10px;">--}}
-                    {{--                                            <div class="row align-items-center">--}}
-                    {{--                                                <div class="col-1 pr-2">--}}
-                    {{--                                                    <h5 class="m-0"><i class="fas fa-tachometer-alt fa-2x"></i></h5>--}}
-                    {{--                                                </div>--}}
-                    {{--                                                <div class="col-3 pl-2">--}}
-                    {{--                                                    <h5 class="m-0">Efficient Assessments</h5>--}}
-                    {{--                                                </div>--}}
-                    {{--                                                <div class="col-8">--}}
-                    {{--                                                    <p>Streamlined audits that minimize disruption.</p>--}}
-                    {{--                                                </div>--}}
-                    {{--                                            </div>--}}
-                    {{--                                        </div>--}}
-                    {{--                                        <div class="py-2 px-3 mb-3"--}}
-                    {{--                                             style="background: rgba(255, 255, 255, 0.1); border-radius: 10px;">--}}
-                    {{--                                            <div class="row align-items-center">--}}
-                    {{--                                                <div class="col-1 pr-2">--}}
-                    {{--                                                    <h5 class="m-0"><i class="fas fa-cubes fa-2x"></i></h5>--}}
-                    {{--                                                </div>--}}
-                    {{--                                                <div class="col-3 pl-2">--}}
-                    {{--                                                    <h5 class="m-0">Integrated Solutions</h5>--}}
-                    {{--                                                </div>--}}
-                    {{--                                                <div class="col-8">--}}
-                    {{--                                                    <p>Holistic strategies to enhance your overall security posture.</p>--}}
-                    {{--                                                </div>--}}
-                    {{--                                            </div>--}}
-                    {{--                                        </div>--}}
-                    {{--                                        <div class="py-2 px-3 mb-3"--}}
-                    {{--                                             style="background: rgba(255, 255, 255, 0.1); border-radius: 10px;">--}}
-                    {{--                                            <div class="row align-items-center">--}}
-                    {{--                                                <div class="col-1 pr-2">--}}
-                    {{--                                                    <h5 class="m-0"><i class="fas fa-award fa-2x"></i></h5>--}}
-                    {{--                                                </div>--}}
-                    {{--                                                <div class="col-3 pl-2">--}}
-                    {{--                                                    <h5 class="m-0">Proven Methodologies</h5>--}}
-                    {{--                                                </div>--}}
-                    {{--                                                <div class="col-8">--}}
-                    {{--                                                    <p>Utilizing best practices to deliver reliable, actionable--}}
-                    {{--                                                        insights.</p>--}}
-                    {{--                                                </div>--}}
-                    {{--                                            </div>--}}
-                    {{--                                        </div>--}}
-                    {{--                                    </div>--}}
-                    {{--                                </div>--}}
-                    {{--                                <div class="col-lg-5 col-md-5 col-12">--}}
-                    {{--                                    <div class="tab-sec-img">--}}
-                    {{--                                        <figure class="mb-0">--}}
-                    {{--                                            <img src="{{ asset('frontend/assets/image/compliance-audits.png') }}"--}}
-                    {{--                                                 alt="tabs-content-img2" class="img-fluid mt-lg-0 mt-md-0 mt-3">--}}
-                    {{--                                        </figure>--}}
-                    {{--                                    </div>--}}
-                    {{--                                </div>--}}
-                    {{--                            </div>--}}
-                    {{--                        </div>--}}
-                    {{--                    </section>--}}
+                                        <div class="py-2 px-3 mb-3"
+                                             style="background: rgba(255, 255, 255, 0.1); border-radius: 10px;">
+                                            <div class="row align-items-center">
+                                                <div class="col-1 pr-2">
+                                                    <h5 class="m-0"><i class="fas fa-tachometer-alt fa-2x"></i></h5>
+                                                </div>
+                                                <div class="col-3 pl-2">
+                                                    <h5 class="m-0">Efficient Assessments</h5>
+                                                </div>
+                                                <div class="col-8">
+                                                    <p>Streamlined audits that minimize disruption.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="py-2 px-3 mb-3"
+                                             style="background: rgba(255, 255, 255, 0.1); border-radius: 10px;">
+                                            <div class="row align-items-center">
+                                                <div class="col-1 pr-2">
+                                                    <h5 class="m-0"><i class="fas fa-cubes fa-2x"></i></h5>
+                                                </div>
+                                                <div class="col-3 pl-2">
+                                                    <h5 class="m-0">Integrated Solutions</h5>
+                                                </div>
+                                                <div class="col-8">
+                                                    <p>Holistic strategies to enhance your overall security posture.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="py-2 px-3 mb-3"
+                                             style="background: rgba(255, 255, 255, 0.1); border-radius: 10px;">
+                                            <div class="row align-items-center">
+                                                <div class="col-1 pr-2">
+                                                    <h5 class="m-0"><i class="fas fa-award fa-2x"></i></h5>
+                                                </div>
+                                                <div class="col-3 pl-2">
+                                                    <h5 class="m-0">Proven Methodologies</h5>
+                                                </div>
+                                                <div class="col-8">
+                                                    <p>Utilizing best practices to deliver reliable, actionable
+                                                        insights.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 col-md-5 col-12">
+                                    <div class="tab-sec-img">
+                                        <figure class="mb-0">
+                                            <img src="{{ asset('frontend/assets/image/compliance-audits.png') }}"
+                                                 alt="tabs-content-img2" class="img-fluid mt-lg-0 mt-md-0 mt-3">
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </div>
         </div>
     </section>
     <!-- service-section -->
+
     <div class="service-main-con">
         <div class="row  ml-0 mr-0">
             <div class="col-lg-7 pl-0 pr-0">
@@ -762,6 +823,7 @@
             </div>
         </div>
     </section>
+
     <!-- blog-post-section -->
     <section>
         <div class="blog-post-con dots-right-img">

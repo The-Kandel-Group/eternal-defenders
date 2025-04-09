@@ -8,15 +8,11 @@
                         <div class="weight-footer-item weight-footer-item1 mb-lg-0 mb-3">
                             <div class="weight-footer-item-img">
                                 <figure>
-                                    <img src="{{asset('frontend/assets/image/logo-img.png')}}" alt="logo-img" class="img-fluid">
+                                    <img src="{{asset(getConfigTableData()->logo)}}" alt="logo-img" class="img-fluid">
                                 </figure>
                             </div>
                             <div class="weight-footer-item-content">
-                                <p class="mb-xl-0 mb-lg-0 mb-md-4 weight-footer-item1-content">Deleniti atque corrupti
-                                    quos dolores et quas
-                                    molestias excepturi sint occaecati rupiditate
-                                    non provident, similique sunt in culpa qui
-                                    officia deserunt mollitia animi..
+                                <p class="mb-xl-0 mb-lg-0 mb-md-4 weight-footer-item1-content">{{getConfigTableData()?->description}}
                                 </p>
                             </div>
                         </div>
@@ -64,23 +60,21 @@
                             </div>
                             <div class="weight-footer-item-content weight-footer-item-link">
                                 <ul class="list-unstyled mb-0 social-icon-list">
-                                    <li class="weight-footer-item2-content col-lg-11 pl-0 pr-0">121 King Street
-                                        Melbourne,
-                                        3000, Australia
+                                    <li class="weight-footer-item2-content col-lg-11 pl-0 pr-0">{{getConfigTableData()?->address_line_1}}
                                     </li>
                                     <li>
-                                        <a href="mailto:info@cyberchip.com">
-                                            info@cyberchip.com
+                                        <a href="mailto:{{getConfigTableData()?->email}}">
+                                            {{getConfigTableData()?->email}}
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="tel:+123456789">+1 23 45 6789</a>
+                                        <a href="tel:{{getConfigTableData()?->primary_phone_number}}">{{getConfigTableData()?->primary_phone_number}}</a>
                                     </li>
-                                    <li class="d-inline-block mb-0"><a href="https://www.facebook.com/"><i
+                                    <li class="d-inline-block mb-0"><a href="{{getConfigTableData()?->facebook_url}}"><i
                                                 class="fab fa-facebook-f"></i></a></li>
-                                    <li class="d-inline-block mb-0"><a href="https://twitter.com/?lang=en"><i
+                                    <li class="d-inline-block mb-0"><a href="{{getConfigTableData()?->twitter_url}}"><i
                                                 class="fab fa-twitter"></i></a></li>
-                                    <li class="d-inline-block mb-0"><a href="https://www.instagram.com/accounts/login/"><i
+                                    <li class="d-inline-block mb-0"><a href="{{getConfigTableData()?->instagram_url}}"><i
                                                 class="fab fa-instagram"></i></a></li>
                                 </ul>
                             </div>
@@ -113,7 +107,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="footer-con text-center">
-                            <p>Copyright cyberchip © 2022. All Rights Reserved.</p>
+                            <p>{{getConfigTableData()?->all_rights_reserved_text}}</p>
                         </div>
                     </div>
                 </div>

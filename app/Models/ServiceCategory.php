@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Services\Service;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -23,5 +24,10 @@ class ServiceCategory extends Model
         'position',
         'status'
     ];
+
+    public function services()
+    {
+        return $this->hasMany(Services::class);
+    }
 
 }

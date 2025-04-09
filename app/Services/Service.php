@@ -76,10 +76,10 @@ class Service
         }
 
         if ($request->file('thumbnail_image')) {
-            $data['thumbnail_image'] = $this->fullImageUploadPath . uploadImage($this->fullImageUploadPath, 'thumbnail_image', true,1920 , null);
+            $data['thumbnail_image'] = $this->fullImageUploadPath . uploadImage($this->fullImageUploadPath, 'thumbnail_image', true,1920 );
         }
         if ($request->file('icon')) {
-            $data['icon'] = $this->fullImageUploadPath . uploadImage($this->fullImageUploadPath, 'icon', true, 200, null);
+            $data['icon'] = $this->fullImageUploadPath . uploadImage($this->fullImageUploadPath, 'icon', false, 200, null);
         }
         return $this->model->create($data);
     }
@@ -123,7 +123,7 @@ class Service
             if ($icon && file_exists(public_path($icon))) {
                 removeImage($icon);
             }
-            $data['icon'] = $this->fullImageUploadPath . uploadImage($this->fullImageUploadPath, 'icon', true, 1920, null);
+            $data['icon'] = $this->fullImageUploadPath . uploadImage($this->fullImageUploadPath, 'icon', false,  null);
         }
         $update->fill($data)->save();
         $update = $this->itemByIdentifier($id);
