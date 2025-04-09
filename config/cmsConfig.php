@@ -23,6 +23,7 @@ $redirectionUrl = '/redirections';
 $activityUrl = '/activities';
 $partnerUrl = '/partners';
 $sliderUrl = '/sliders';
+$newsletterSubscriptionUrl = '/newsletter-subscriptions';
 
 return [
     // routes entered in this array are accessible by any user no matter what role is given
@@ -315,6 +316,57 @@ return [
                     'name' => 'Delete Testimonial',
                     'route' => [
                         'url' => $testimonialUrl . '/*',
+                        'method' => $deleteMethod,
+                    ],
+                ]
+            ],
+
+        ],
+        [
+            'name' => 'Newsletter Subscription',
+            'icon' => "<i class='fa fa-envelope'></i>",
+            'hasSubmodules' => false,
+            'route' => $testimonialUrl,
+            'routeIndexName' => 'newsletter-subscriptions.index',
+            'routeName' => 'newsletter-subscriptions',
+            'permissions' => [
+                [
+                    'name' => 'View Newsletter Subscription',
+                    'route' => [
+                        'url' => $newsletterSubscriptionUrl,
+                        'method' => $getMethod,
+                    ],
+                ],
+                [
+                    'name' => 'Create Newsletter Subscription',
+                    'route' => [
+                        [
+                            'url' => $newsletterSubscriptionUrl . '/create',
+                            'method' => $getMethod,
+                        ],
+                        [
+                            'url' => $newsletterSubscriptionUrl,
+                            'method' => $postMethod,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Edit Newsletter Subscription',
+                    'route' => [
+                        [
+                            'url' => $newsletterSubscriptionUrl . '/*/edit',
+                            'method' => $getMethod,
+                        ],
+                        [
+                            'url' => $newsletterSubscriptionUrl . '/*',
+                            'method' => $putMethod,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Delete Newsletter Subscription',
+                    'route' => [
+                        'url' => $newsletterSubscriptionUrl . '/*',
                         'method' => $deleteMethod,
                     ],
                 ]
