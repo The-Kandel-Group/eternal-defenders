@@ -48,7 +48,6 @@
     .cke_notifications_area {
         display: none;
     }
-
     .select2-container {
         box-sizing: border-box;
         display: inline-block;

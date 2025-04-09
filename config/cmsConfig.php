@@ -27,6 +27,8 @@ $vacancyApplicationUrl = '/vacancy-applications';
 $coreValuesUrl = '/core-values';
 $serviceCategoryUrl = '/service-categories';
 $servicesUrl = '/services';
+$sliderUrl = '/sliders';
+$newsletterSubscriptionUrl = '/newsletter-subscriptions';
 
 return [
     // routes entered in this array are accessible by any user no matter what role is given
@@ -588,6 +590,57 @@ return [
 
         ],
         [
+            'name' => 'Newsletter Subscription',
+            'icon' => "<i class='fa fa-envelope'></i>",
+            'hasSubmodules' => false,
+            'route' => $testimonialUrl,
+            'routeIndexName' => 'newsletter-subscriptions.index',
+            'routeName' => 'newsletter-subscriptions',
+            'permissions' => [
+                [
+                    'name' => 'View Newsletter Subscription',
+                    'route' => [
+                        'url' => $newsletterSubscriptionUrl,
+                        'method' => $getMethod,
+                    ],
+                ],
+                [
+                    'name' => 'Create Newsletter Subscription',
+                    'route' => [
+                        [
+                            'url' => $newsletterSubscriptionUrl . '/create',
+                            'method' => $getMethod,
+                        ],
+                        [
+                            'url' => $newsletterSubscriptionUrl,
+                            'method' => $postMethod,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Edit Newsletter Subscription',
+                    'route' => [
+                        [
+                            'url' => $newsletterSubscriptionUrl . '/*/edit',
+                            'method' => $getMethod,
+                        ],
+                        [
+                            'url' => $newsletterSubscriptionUrl . '/*',
+                            'method' => $putMethod,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Delete Newsletter Subscription',
+                    'route' => [
+                        'url' => $newsletterSubscriptionUrl . '/*',
+                        'method' => $deleteMethod,
+                    ],
+                ]
+            ],
+
+        ],
+        [
             'name' => 'Partner',
             'icon' => "<i class='fa fa-user-graduate'></i>",
             'hasSubmodules' => false,
@@ -632,6 +685,58 @@ return [
                     'name' => 'Delete Testimonial',
                     'route' => [
                         'url' => $testimonialUrl . '/*',
+                        'method' => $deleteMethod,
+                    ],
+                ]
+            ],
+
+        ],
+
+        [
+            'name' => 'Slider',
+            'icon' => "<i class='fa fa-solid fa-sliders'></i>",
+            'hasSubmodules' => false,
+            'route' => $sliderUrl,
+            'routeIndexName' => 'sliders.index',
+            'routeName' => 'sliders',
+            'permissions' => [
+                [
+                    'name' => 'View Slider',
+                    'route' => [
+                        'url' => $sliderUrl,
+                        'method' => $getMethod,
+                    ],
+                ],
+                [
+                    'name' => 'Create Slider',
+                    'route' => [
+                        [
+                            'url' => $sliderUrl . '/create',
+                            'method' => $getMethod,
+                        ],
+                        [
+                            'url' => $sliderUrl,
+                            'method' => $postMethod,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Edit Slider',
+                    'route' => [
+                        [
+                            'url' => $sliderUrl . '/*/edit',
+                            'method' => $getMethod,
+                        ],
+                        [
+                            'url' => $sliderUrl . '/*',
+                            'method' => $putMethod,
+                        ],
+                    ],
+                ],
+                [
+                    'name' => 'Delete Slider',
+                    'route' => [
+                        'url' => $sliderUrl . '/*',
                         'method' => $deleteMethod,
                     ],
                 ]

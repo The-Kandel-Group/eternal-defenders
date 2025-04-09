@@ -39,7 +39,7 @@ return new class extends Migration
             $table->string('youtube_url')->nullable();
             $table->text('map_url')->nullable();
             $table->text('video_url')->nullable();
-            $table->string('cononical_url')->nullable();
+            $table->string('canonical_url')->nullable();
             $table->string('keywords')->nullable();
             // Bank-related fields
             $table->string('bank_name')->nullable();

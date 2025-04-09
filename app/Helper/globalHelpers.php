@@ -547,9 +547,9 @@ function countryList()
 }
 function getCononicalUrl()
 {
-    if (!getConfigTableData()?->cononical_url) {
+    if (!getConfigTableData()?->canonical_url) {
         return request()->url();
     }
-    $curl = str_replace(request()->getHost(), getConfigTableData()?->cononical_url, request()->url());
+    $curl = str_replace(request()->getHost(), getConfigTableData()?->canonical_url, request()->url());
     return $curl;
 }
