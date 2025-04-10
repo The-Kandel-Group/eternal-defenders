@@ -8,5 +8,6 @@
     <link rel="stylesheet" href="{{asset('frontend/assets/css/super-classes.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/assets/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/assets/css/mobile.css')}}">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>{{getConfigTableData()?->company_name}}</title>
 </head>

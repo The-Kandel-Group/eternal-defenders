@@ -124,3 +124,24 @@
 <script src="{{asset('frontend/assets/js/popper.min.js')}}"></script>
 <script src="{{asset('frontend/assets/js/bootstrap.min.js')}}"></script>
 <script src="{{asset('frontend/assets/js/custom-script.js')}}"></script>
+@if (session('success'))
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Success',
+            text: '{{ session('success') }}',
+            showConfirmButton: true
+        });
+    </script>
+@endif
+
+@if (session('error'))
+    <script>
+        Swal.fire({
+            icon: 'error',
+            title: 'error',
+            text: '{{ session('error') }}',
+            showConfirmButton: true
+        });
+    </script>
+@endif

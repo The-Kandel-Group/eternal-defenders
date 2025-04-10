@@ -49,6 +49,7 @@ if (\Illuminate\Support\Facades\Schema::hasTable('table_name')) {
     }
 }
 Route::get('/', [IndexController::class, 'index'])->name('index');
+Route::post('save-contact/', [IndexController::class, 'saveContact'])->name('saveContact');
 /*FRONTEND ROUTE*/
 Route::prefix(getSystemPrefix())->middleware(['auth', 'permission.routes', 'log'])->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home.index');

@@ -21,59 +21,24 @@
                         </div>
                         <h4 class="text-white mb-3">Our Core Values</h4>
                         <div class="row wow fadeInUp">
-                            <div class="col-md-6 col-12">
-                                <div class="Effective-sec-item mb-4" style="background: #040a1f;">
-                                    <figure>
-                                        <img src="{{ asset('frontend/assets/image/Effective-sec-item-img6.png') }}"
-                                             alt="Effective-sec-item-img" class="img-fluid">
-                                    </figure>
-                                    <div class="Effective-sec-item-title">
-                                        <h4 class="mb-0">Excellence in Protection
-                                        </h4>
-                                        <p class="mb-0">Committed to the highest standard of security with continuous
-                                            improvement.
-                                        </p>
+
+                            @foreach($coreValues as $coreValuesKey => $coreValuesDatum)
+                                <div class="col-md-6 col-12">
+                                    <div class="Effective-sec-item mb-4" style="background: #040a1f;">
+                                        <figure>
+                                            <img
+                                                src="{{ asset($coreValuesDatum->icon??'frontend/assets/image/Effective-sec-item-img6.png') }}"
+                                                alt="Effective-sec-item-img" class="img-fluid">
+                                        </figure>
+                                        <div class="Effective-sec-item-title">
+                                            <h4 class="mb-0">{{$coreValuesDatum->title}}
+                                            </h4>
+                                            <p class="mb-0">{{$coreValuesDatum->subtitle}}
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6 col-12">
-                                <div class="Effective-sec-item mb-lg-0 mb-4" style="background: #040a1f;">
-                                    <figure>
-                                        <img src="{{ asset('frontend/assets/image/Effective-sec-item-img7.png') }}"
-                                             alt="Effective-sec-item-img" class="img-fluid">
-                                    </figure>
-                                    <div class="Effective-sec-item-title">
-                                        <h4 class="mb-0">Practical Innovation
-                                        </h4>
-                                        <p class="mb-0">Innovative approaches to solve real-world security
-                                            challenges.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-12">
-                                <div class="Effective-sec-item Effective-sec-item3" style="background: #040a1f;">
-                                    <figure>
-                                        <img src="{{ asset('frontend/assets/image/Effective-sec-item-img8.png') }}"
-                                             alt="Effective-sec-item-img" class="img-fluid">
-                                    </figure>
-                                    <div class="Effective-sec-item-title">
-                                        <h4 class="mb-0">Knowledge Empowerment</h4>
-                                        <p class="mb-0">Transforming security awareness into actionable strategies.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-12">
-                                <div class="Effective-sec-item" style="background: #040a1f;">
-                                    <figure>
-                                        <img src="{{ asset('frontend/assets/image/Effective-sec-item-img5.png') }}"
-                                             alt="Effective-sec-item-img" class="img-fluid">
-                                    </figure>
-                                    <div class="Effective-sec-item-title">
-                                        <h4 class="mb-0">Integrity & Trust</h4>
-                                        <p class="mb-0">Earning trust through transparency and ethical practices.</p>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12 informationmain-right-con">
@@ -135,51 +100,51 @@
 
                     @endforeach
 
-                        @foreach($serviceCategories as $serviceCategoriesKey=> $serviceCategoriesDatum)
-                            @php $serviceCategoriesKey = $serviceCategoriesKey + 1; @endphp
+                    @foreach($serviceCategories as $serviceCategoriesKey=> $serviceCategoriesDatum)
+                        @php $serviceCategoriesKey = $serviceCategoriesKey + 1; @endphp
 
-                            <section id="content{{$serviceCategoriesKey}}">
-                                <div class="tabs-content">
-                                    <div class="row">
-                                        <div class="col-lg-7 col-md-7 col-12">
-                                            <h3>{{$serviceCategoriesDatum?->title}}</h3>
-                                            <h5>{{$serviceCategoriesDatum?->sub_title}}</h5>
-                                            <div class="tab-description">
-                                                <p>{{$serviceCategoriesDatum?->description}}</p>
-                                                <h4 class="text-white my-3">Our Distinct Edge</h4>
+                        <section id="content{{$serviceCategoriesKey}}">
+                            <div class="tabs-content">
+                                <div class="row">
+                                    <div class="col-lg-7 col-md-7 col-12">
+                                        <h3>{{$serviceCategoriesDatum?->title}}</h3>
+                                        <h5>{{$serviceCategoriesDatum?->sub_title}}</h5>
+                                        <div class="tab-description">
+                                            <p>{{$serviceCategoriesDatum?->description}}</p>
+                                            <h4 class="text-white my-3">Our Distinct Edge</h4>
 
-                                                @foreach($serviceCategoriesDatum->services as $servicesKey => $servicesDatum)
-                                                    <div class="py-2 px-3 mb-3"
-                                                         style="background: rgba(255, 255, 255, 0.1); border-radius: 10px;">
-                                                        <div class="row align-items-center">
-                                                            <div class="col-1 pr-2">
-                                                                <h5 class="m-0"><i class="fas fa-stopwatch fa-2x"></i></h5>
-                                                            </div>
-                                                            <div class="col-3 pl-2">
-                                                                <h5 class="m-0">{{$servicesDatum->title}}</h5>
-                                                            </div>
-                                                            <div class="col-8">
-                                                                <p>{{$servicesDatum->sub_title}}</p>
-                                                            </div>
+                                            @foreach($serviceCategoriesDatum->services as $servicesKey => $servicesDatum)
+                                                <div class="py-2 px-3 mb-3"
+                                                     style="background: rgba(255, 255, 255, 0.1); border-radius: 10px;">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-1 pr-2">
+                                                            <h5 class="m-0"><i class="fas fa-stopwatch fa-2x"></i></h5>
+                                                        </div>
+                                                        <div class="col-3 pl-2">
+                                                            <h5 class="m-0">{{$servicesDatum->title}}</h5>
+                                                        </div>
+                                                        <div class="col-8">
+                                                            <p>{{$servicesDatum->sub_title}}</p>
                                                         </div>
                                                     </div>
-                                                @endforeach
-                                            </div>
+                                                </div>
+                                            @endforeach
                                         </div>
-                                        <div class="col-lg-5 col-lg-5 col-md-5 col-12">
-                                            <div class="tab-sec-img">
-                                                <figure class="mb-0">
-                                                    <img src="{{ asset($serviceCategoriesDatum->thumbnail_image) }}"
-                                                         alt="tabs-sec-img{{$serviceCategoriesKey}}"
-                                                         class="img-fluid mt-lg-0 mt-md-0 mt-3">
-                                                </figure>
-                                            </div>
+                                    </div>
+                                    <div class="col-lg-5 col-lg-5 col-md-5 col-12">
+                                        <div class="tab-sec-img">
+                                            <figure class="mb-0">
+                                                <img src="{{ asset($serviceCategoriesDatum->thumbnail_image) }}"
+                                                     alt="tabs-sec-img{{$serviceCategoriesKey}}"
+                                                     class="img-fluid mt-lg-0 mt-md-0 mt-3">
+                                            </figure>
                                         </div>
                                     </div>
                                 </div>
-                            </section>
+                            </div>
+                        </section>
 
-                        @endforeach
+                    @endforeach
 
                     {{--                    <section id="content2">--}}
                     {{--                        <div class="tabs-content">--}}
@@ -615,149 +580,41 @@
                     <h2>Simulated Career Tracks</h2>
                 </div>
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="p-4" style="background: #040a1f;">
-                            <h4 class="mb-3">Entry Level SOC Analyst</h4>
-                            <p>Ideal for beginners focusing on monitoring security events and basic incident triage.
-                                <span class="dots">...</span></p>
-                            <div class="more" style="display: none;">
-                                <h5>Responsibilities</h5>
-                                <ul style="color: #f4f4f4; margin-left: 20px;">
-                                    <li>Monitor SIEM dashboards and review logs from firewalls and IDS/IPS.</li>
-                                    <li>Perform initial incident triage and escalate critical alerts.</li>
-                                    <li>Document incidents and assist with post-incident reviews.</li>
-                                </ul>
-                                <h5>Qualifications</h5>
-                                <ul style="color: #f4f4f4; margin-left: 20px;">
-                                    <li>Bachelor’s degree in Computer Science, IT, or equivalent.</li>
-                                    <li>Basic understanding of networking protocols and OS fundamentals.</li>
-                                </ul>
-                                <h5>Requirements & Tools</h5>
-                                <ul style="color: #f4f4f4; margin-left: 20px;">
-                                    <li>Familiarity with SIEM tools and log analysis techniques.</li>
-                                    <li>Basic scripting skills (Python, Shell, PowerShell).</li>
-                                    <li>Exposure to Slack, Microsoft Teams, Jira, and Trello.</li>
-                                    <li>Cloud fundamentals are a plus.</li>
-                                </ul>
-                            </div>
-                            <a class="blog-post-item-title-link readBtn" href="javascript:void(0)"
-                               onclick="readMore(this)">Read more <i class="fas fa-chevron-right"></i></a>
-                            <div class="get-start-link mt-3">
-                                <a href="#contact" class="btn btn-outline-success btn-sm">Apply Now</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="p-4" style="background: #040a1f;">
-                            <h4 class="mb-3">Mid Level SOC Analyst</h4>
-                            <p>Bridges daily monitoring with in-depth incident analysis and process optimization. <span
-                                    class="dots">...</span></p>
-                            <div class="more" style="display: none;">
-                                <h5>Responsibilities</h5>
-                                <ul style="color: #f4f4f4; margin-left: 20px;">
-                                    <li>Analyze and correlate events using advanced SIEM platforms.</li>
-                                    <li>Investigate and validate alerts; perform comprehensive log analysis.</li>
-                                    <li>Mentor entry-level analysts and refine SOC processes.</li>
-                                    <li>Collaborate with threat intelligence teams to improve detection rules.</li>
-                                </ul>
-                                <h5>Qualifications</h5>
-                                <ul style="color: #f4f4f4; margin-left:20px;">
-                                    <li>Minimum 2 years of experience in a SOC or related role.</li>
-                                    <li>Solid understanding of networking, OS fundamentals, and security frameworks.
-                                    </li>
-                                </ul>
-                                <h5>Requirements & Tools</h5>
-                                <ul style="color: #f4f4f4; margin-left:20px;">
-                                    <li>Advanced use of SIEM tools and vulnerability scanners.</li>
-                                    <li>Intermediate scripting skills for automation.</li>
-                                    <li>Experience with collaboration tools (Slack, Teams, Jira, Trello).</li>
-                                    <li>Certifications such as CompTIA Security+, CEH, or GIAC are preferred.</li>
-                                </ul>
-                            </div>
-                            <a class="blog-post-item-title-link readBtn" href="javascript:void(0)"
-                               onclick="readMore(this)">Read more <i class="fas fa-chevron-right"></i></a>
-                            <div class="get-start-link mt-3">
-                                <a href="#contact" class="btn btn-outline-success btn-sm">Apply Now</a>
+                    @foreach($vacancies as $vacanciesKey => $vacanciesDatum)
+                        <div class="col-md-4">
+                            <div class="p-4" style="background: #040a1f;">
+                                <h4 class="mb-3">{{$vacanciesDatum->title}}</h4>
+                                <p>{{$vacanciesDatum->sub_title}}
+                                    <span class="dots">...</span></p>
+                                <div class="more" style="display: none;">
+                                    <h5>Responsibilities</h5>
+                                    <ul style="color: #f4f4f4; margin-left: 20px;">
+                                        <li>Monitor SIEM dashboards and review logs from firewalls and IDS/IPS.</li>
+                                        <li>Perform initial incident triage and escalate critical alerts.</li>
+                                        <li>Document incidents and assist with post-incident reviews.</li>
+                                    </ul>
+                                    <h5>Qualifications</h5>
+                                    <ul style="color: #f4f4f4; margin-left: 20px;">
+                                        <li>Bachelor’s degree in Computer Science, IT, or equivalent.</li>
+                                        <li>Basic understanding of networking protocols and OS fundamentals.</li>
+                                    </ul>
+                                    <h5>Requirements & Tools</h5>
+                                    <ul style="color: #f4f4f4; margin-left: 20px;">
+                                        <li>Familiarity with SIEM tools and log analysis techniques.</li>
+                                        <li>Basic scripting skills (Python, Shell, PowerShell).</li>
+                                        <li>Exposure to Slack, Microsoft Teams, Jira, and Trello.</li>
+                                        <li>Cloud fundamentals are a plus.</li>
+                                    </ul>
+                                </div>
+                                <a class="blog-post-item-title-link readBtn" href="javascript:void(0)"
+                                   onclick="readMore(this)">Read more <i class="fas fa-chevron-right"></i></a>
+                                <div class="get-start-link mt-3">
+                                    <a href="#contact" class="btn btn-outline-success btn-sm">Apply Now</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="p-4" style="background: #040a1f;">
-                            <h4 class="mb-3">Junior Penetration Tester</h4>
-                            <p>Supports vulnerability assessments and tests for those starting an ethical hacking
-                                career. <span class="dots">...</span></p>
-                            <div class="more" style="display: none;">
-                                <h5>Responsibilities</h5>
-                                <ul style="color: #f4f4f4; margin-left: 20px;">
-                                    <li>Assist in vulnerability scans and penetration tests on networks, applications,
-                                        and systems.
-                                    </li>
-                                    <li>Utilize automated tools and perform manual verification.</li>
-                                    <li>Document findings and provide initial remediation recommendations.</li>
-                                </ul>
-                                <h5>Qualifications</h5>
-                                <ul style="color: #f4f4f4; margin-left: 20px;">
-                                    <li>Bachelor's degree in Cybersecurity, Computer Science, or equivalent.</li>
-                                    <li>Basic understanding of cybersecurity concepts and common vulnerabilities.</li>
-                                </ul>
+                    @endforeach
 
-                                <h5>Requirements & Tools</h5>
-                                <ul style="color: #f4f4f4; margin-left: 20px;">
-                                    <li>Familiarity with penetration testing tools: Nmap, Burp Suite, Metasploit,
-                                        Wireshark.
-                                    </li>
-                                    <li>Basic scripting/programming skills.</li>
-                                    <li>Experience with collaboration tools.</li>
-                                    <li>Interest in ethical hacking with certifications in progress is a plus.</li>
-                                </ul>
-                            </div>
-
-                            <a class="blog-post-item-title-link readBtn" href="javascript:void(0)"
-                               onclick="readMore(this)">Read more <i class="fas fa-chevron-right"></i></a>
-                            <div class="get-start-link mt-3">
-                                <a href="#contact" class="btn btn-outline-success btn-sm">Apply Now</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mt-4">
-                        <div class="p-4" style="background: #040a1f;">
-                            <h4 class="mb-3">Penetration Tester</h4>
-                            <p>Lead comprehensive tests to uncover vulnerabilities and advise on remediation. <span
-                                    class="dots">...</span>
-                            <div class="more" style="display: none;">
-                                <h5>Responsibilities</h5>
-                                <ul style="color: #f4f4f4; margin-left: 20px;">
-                                    <li>Plan and execute penetration tests on networks, web applications, and systems.
-                                    </li>
-                                    <li>Perform both automated and manual testing to simulate real-world attacks.</li>
-                                    <li>Analyze findings and develop detailed remediation recommendations.</li>
-                                    <li>Collaborate with IT, development, and security teams to implement
-                                        improvements.
-                                    </li>
-                                </ul>
-                                <h5>Qualifications</h5>
-                                <ul style="color: #f4f4f4; margin-left: 20px;">
-                                    <li>3-5 years of experience in penetration testing or related roles.</li>
-                                    <li>In-depth knowledge of network architectures, operating systems, and web
-                                        technologies.
-                                    </li>
-                                </ul>
-                                <h5>Requirements & Tools</h5>
-                                <ul style="color: #f4f4f4; margin-left: 20px;">
-                                    <li>Proficiency with tools: Nmap, Burp Suite, Metasploit, Wireshark, etc.</li>
-                                    <li>Advanced scripting skills for automation.</li>
-                                    <li>Experience with collaboration tools and cloud security basics.</li>
-                                    <li>Preferred certifications: OSCP, CEH, GPEN, or CISSP.</li>
-                                </ul>
-                            </div>
-                            </p>
-                            <a class="blog-post-item-title-link readBtn" href="javascript:void(0)"
-                               onclick="readMore(this)">Read more <i class="fas fa-chevron-right"></i></a>
-                            <div class="get-start-link mt-3">
-                                <a href="#contact" class="btn btn-outline-success btn-sm">Apply Now</a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -771,54 +628,41 @@
                     <h2>Insights & Updates from Our Security Experts</h2>
                 </div>
                 <div class="row">
-                    <div class="col-lg-6 col-md-6 col-12 mb-lg-0 mb-md-0  mb-4 wow slideInLeft">
-                        <div class="blog-post-item">
-                            <div class="blog-post-item-img">
-                                <a href="single-post.html">
-                                    <figure class="mb-0">
-                                        <img src="{{asset('frontend/assets/image/blog-post-img1.png')}}"
-                                             alt="blog-post-img" class="img-fluid">
-                                    </figure>
-                                </a>
-                            </div>
-                            <div class="blog-post-item-title">
-                                <a href="single-post.html">
-                                    <h6>Trend In Design</h6>
-                                </a>
-                                <a href="single-post.html">
-                                    <h4 class="mb-3">Protect Your Workplace From
-                                        Cyber Attacks
-                                    </h4>
-                                </a>
-                                <a href="single-post.html" class="blog-post-item-title-link">Read more <i
-                                        class="fas fa-chevron-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-12 wow slideInRight">
-                        <div class="blog-post-item">
-                            <div class="blog-post-item-img">
-                                <a href="single-post.html">
-                                    <figure class="mb-0">
-                                        <img src="{{asset('frontend/assets/image/blog-post-img2.png')}}"
-                                             alt="blog-post-img" class="img-fluid">
-                                    </figure>
-                                </a>
-                            </div>
-                            <div class="blog-post-item-title">
-                                <a href="single-post.html">
-                                    <h6>Management</h6>
-                                </a>
-                                <a href="single-post.html">
-                                    <h4 class="mb-3">Security In A Fragment World Of
-                                        Workload For Your Business
-                                    </h4>
-                                </a>
-                                <a href="single-post.html" class="blog-post-item-title-link">Read more <i
-                                        class="fas fa-chevron-right"></i></a>
+                    @foreach($blogs as $blogsKey =>$blogsDatum)
+                        @php
+                            if ($blogsKey % 2 == 0) {
+                                $slideLeftRight = 'mb-lg-0 mb-md-0 mb-4 wow slideInLeft';
+                            } else {
+                                $slideLeftRight = 'wow slideInRight';
+                            }
+                        @endphp
+
+                        <div class="col-lg-6 col-md-6 col-12 {{$slideLeftRight}} ">
+                            <div class="blog-post-item">
+                                <div class="blog-post-item-img">
+                                    <a href="single-post.html">
+                                        <figure class="mb-0">
+                                            <img
+                                                src="{{$blogsDatum->image??asset('frontend/assets/image/blog-post-img1.png')}}"
+                                                alt="blog-post-img" class="img-fluid"
+                                                style="object-fit: cover; height:540px;">
+                                        </figure>
+                                    </a>
+                                </div>
+                                <div class="blog-post-item-title">
+                                    {{--                                <a href="single-post.html">--}}
+                                    {{--                                    <h6>Trend In Design</h6>--}}
+                                    {{--                                </a>--}}
+                                    <a href="single-post.html">
+                                        <h4 class="mb-3">{{$blogsDatum->title}}
+                                        </h4>
+                                    </a>
+                                    <a href="single-post.html" class="blog-post-item-title-link">Read more <i
+                                            class="fas fa-chevron-right"></i></a>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -850,24 +694,51 @@
                     <h5>Get in touch</h5>
                     <h2>Send us a Message</h2>
                 </div>
-                <form class="form-inner-con wow slideInLeft" id="contactpage" method="POST">
+                <form class="form-inner-con wow slideInLeft" action="{{route('saveContact')}}" id="contactpage"
+                      method="POST">
+                    @csrf
                     <div class="row">
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <input type="text" placeholder="Name" name="name" id="name">
+                        <div class=" col-6">
+                            <input type="text" placeholder="First Name" name="first_name" id="first_name"
+                                   value="{{ old('first_name') }}">
+                            @if ($errors->has('first_name'))
+                                <div class="text-danger">{{ $errors->first('first_name') }}</div>
+                            @endif
                         </div>
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <input type="email" placeholder="Email" name="email" id="email">
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-12">
-                            <input type="tel" placeholder="Phone" name="phone" id="phone">
+                        <div class="col-6">
+                            <input type="text" placeholder="Last Name" name="last_name" id="last_name"
+                                   value="{{ old('last_name') }}">
+                            @if ($errors->has('last_name'))
+                                <div class="text-danger">{{ $errors->first('last_name') }}</div>
+                            @endif
                         </div>
                     </div>
+                    <div class="row mt-4">
+                        <div class="col-6">
+                            <input type="email" placeholder="Email" name="email" id="email" value="{{ old('email') }}">
+                            @if ($errors->has('email'))
+                                <div class="text-danger">{{ $errors->first('email') }}</div>
+                            @endif
+                        </div>
+                        <div class="col-6">
+                            <input type="tel" placeholder="Mobile Number" name="mobile_number" id="mobile_number"
+                                   value="{{ old('mobile_number') }}">
+                            @if ($errors->has('mobile_number'))
+                                <div class="text-danger">{{ $errors->first('mobile_number') }}</div>
+                            @endif
+                        </div>
+                    </div>
+
                     <div class="row">
                         <div class="col-lg-12">
-                            <textarea class="w-100" placeholder="Message" rows="3" name="comments"
-                                      id="comments"></textarea>
+                                <textarea class="w-100" placeholder="Message" rows="3" name="message"
+                                          id="message">{{ old('message') }}</textarea>
+                            @if ($errors->has('message'))
+                                <div class="text-danger">{{ $errors->first('message') }}</div>
+                            @endif
                         </div>
                     </div>
+
                     <div class="row">
                         <div class="col-lg-12 text-center">
                             <button type="submit" id="submit" class="contact-btn">Submit</button>

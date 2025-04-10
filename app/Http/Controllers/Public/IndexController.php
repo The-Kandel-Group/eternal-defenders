@@ -3,8 +3,13 @@
 namespace App\Http\Controllers\Public;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\System\ContactUsRequest;
+use App\Models\ContactUs;
+use App\Models\CoreValues;
 use App\Models\Page;
+use App\Models\Post;
 use App\Models\ServiceCategory;
+use App\Models\Vacancy;
 
 
 class IndexController extends Controller
@@ -29,10 +34,13 @@ class IndexController extends Controller
         try {
             $data = [];
             $data['serviceCategories'] = ServiceCategory::where('status', 1)
-                ->with(['services' => function($query) {
+                ->with(['services' => function ($query) {
                     $query->where('status', 1);
                 }])
                 ->get();
+            $data['coreValues'] = CoreValues::where('status', 1)->get();
+            $data['vacancies'] = Vacancy::where('status', 1)->orderby('position', 'asc')->get();
+            $data['blogs'] = Post::where('status', 1)->get();
             return view('frontend.index', $data);
         } catch (\Throwable $th) {
             dd($th);
@@ -52,5 +60,19 @@ class IndexController extends Controller
         } catch (\Throwable $th) {
             return view('frontend.pages.404-not-found');
         }
+    }
+
+    public function saveContact(ContactUsRequest $request)
+    {
+        try {
+            $data = $request->all();
+            ContactUs::create($data);
+            session()->flash('success', 'Your message has been sent successfully!');
+            return redirect()->back();
+        } catch (\Throwable $th) {
+            session()->flash('error', 'Something went wrong.');
+            return redirect()->back()->withInput(); // keep the form inputs
+        }
+
     }
 }

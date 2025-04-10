@@ -26,8 +26,11 @@ class ContactUsRequest extends FormRequest
         $validation = [
             'first_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
-            'mobile_number' => 'required|string|max:15',
-            'email' => 'required|email|max:255',
+            'mobile_number' => [
+                'required',
+                'regex:/^9\d{9}$/', // Starts with 9 and exactly 9 digits follow
+                'numeric',           // Only numeric values allowed
+            ],            'email' => 'required|email|max:255',
             'message' => 'required|max:255',
         ];
         return $validation;
