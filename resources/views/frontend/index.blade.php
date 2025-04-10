@@ -10,14 +10,7 @@
                             <h2>About Eternal Defenders</h2>
                         </div>
                         <div class="informationmain-right-content">
-                            <p>Eternal Defenders is more than just a cybersecurity company; it is a tribute to the brave
-                                souls who lost their lives in wars, their identities unknown but their sacrifices
-                                eternal.
-                                Their unwavering commitment to protection inspires our mission: to safeguard businesses,
-                                individuals, and institutions from the unseen battles of the digital world. <br> <br>
-                                Just
-                                as these unknown warriors defended their nations, we stand as the defenders of the cyber
-                                realm, shielding enterprises from the ever-evolving threats of cybercrime.</p>
+                            {!!  $aboutUsPage?->body!!}
                         </div>
                         <h4 class="text-white mb-3">Our Core Values</h4>
                         <div class="row wow fadeInUp">
@@ -27,8 +20,8 @@
                                     <div class="Effective-sec-item mb-4" style="background: #040a1f;">
                                         <figure>
                                             <img
-                                                src="{{ asset($coreValuesDatum->icon??'frontend/assets/image/Effective-sec-item-img6.png') }}"
-                                                alt="Effective-sec-item-img" class="img-fluid">
+                                                    src="{{ asset($coreValuesDatum->icon??'frontend/assets/image/Effective-sec-item-img6.png') }}"
+                                                    alt="Effective-sec-item-img" class="img-fluid">
                                         </figure>
                                         <div class="Effective-sec-item-title">
                                             <h4 class="mb-0">{{$coreValuesDatum->title}}
@@ -47,15 +40,7 @@
                                 <div class="Effective-sec-item-title">
                                     <h4 class="mb-0 pt-0">Our Mission
                                     </h4>
-                                    <p class="mb-0">At Eternal Defenders, our mission is to safeguard the digital
-                                        landscape
-                                        through innovative cybersecurity solutions and immersive training programs. We
-                                        protect our clients' critical assets with proactive security expertise and
-                                        resilient
-                                        infrastructure. <br><br> Through hands-on training and comprehensive managed
-                                        services, we empower organizations and individuals to counter evolving threats
-                                        and
-                                        build lasting cybersecurity careers.</p>
+                                    {!! $missionPage?->body !!}
                                 </div>
                             </div>
 
@@ -63,13 +48,7 @@
                                 <div class="Effective-sec-item-title">
                                     <h4 class="mb-0 pt-0">Our Vision
                                     </h4>
-                                    <p class="mb-0">We aspire to be the trusted guardian of digital ecosystems
-                                        worldwide,
-                                        where innovation and security merge to create a safer future. Our vision is to
-                                        redefine cybersecurity education by bridging theory with practical
-                                        experience.<br><br> Continuously evolving our training and services, we ensure
-                                        our
-                                        clients can confidently pursue digital initiatives without fear.</p>
+                                    {!! $ourVisionPage->body !!}
                                 </div>
                             </div>
                         </div>
@@ -562,7 +541,7 @@
                                 </div>
                             </div>
                             <div class="Effective-link ml-auto mr-auto">
-                                <a href="about.html" class="contact-btn">Start Your Journey</a>
+                                <a href="#contactpage" class="contact-btn">Start Your Journey</a>
                             </div>
                         </div>
                     </div>
@@ -609,7 +588,7 @@
                                 <a class="blog-post-item-title-link readBtn" href="javascript:void(0)"
                                    onclick="readMore(this)">Read more <i class="fas fa-chevron-right"></i></a>
                                 <div class="get-start-link mt-3">
-                                    <a href="#contact" class="btn btn-outline-success btn-sm">Apply Now</a>
+                                    <a href="#contactpage" class="btn btn-outline-success btn-sm">Apply Now</a>
                                 </div>
                             </div>
                         </div>
@@ -643,9 +622,9 @@
                                     <a href="single-post.html">
                                         <figure class="mb-0">
                                             <img
-                                                src="{{$blogsDatum->image??asset('frontend/assets/image/blog-post-img1.png')}}"
-                                                alt="blog-post-img" class="img-fluid"
-                                                style="object-fit: cover; height:540px;">
+                                                    src="{{$blogsDatum->image??asset('frontend/assets/image/blog-post-img1.png')}}"
+                                                    alt="blog-post-img" class="img-fluid"
+                                                    style="object-fit: cover; height:540px;">
                                         </figure>
                                     </a>
                                 </div>
@@ -658,7 +637,7 @@
                                         </h4>
                                     </a>
                                     <a href="single-post.html" class="blog-post-item-title-link">Read more <i
-                                            class="fas fa-chevron-right"></i></a>
+                                                class="fas fa-chevron-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -679,7 +658,7 @@
                     <p>Whether you're looking to enhance your organization's security posture or launch a career in
                         cybersecurity, Eternal Defenders has the expertise and resources to support your journey.</p>
                     <div class="get-start-link text-center">
-                        <a href="#contact" class="contact-btn">Contact Us Today</a>
+                        <a href="#contactpage" class="contact-btn">Contact Us Today</a>
                     </div>
                 </div>
             </div>
@@ -688,7 +667,7 @@
     <!-- get-start-section-->
     <!--form-section-->
     <section>
-        <div class="form-main-con dots-left-img">
+        <div class="form-main-con dots-left-img" id="contact">
             <div class="container overlay-content">
                 <div class="form-title-con text-center wow slideInLeft">
                     <h5>Get in touch</h5>

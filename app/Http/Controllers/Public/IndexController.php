@@ -40,10 +40,12 @@ class IndexController extends Controller
                 ->get();
             $data['coreValues'] = CoreValues::where('status', 1)->get();
             $data['vacancies'] = Vacancy::where('status', 1)->orderby('position', 'asc')->get();
+            $data['aboutUsPage'] = Page::where('slug','about-us')->where('status', 1)->first();
+            $data['missionPage'] = Page::where('slug','our-mission')->where('status', 1)->first();
+            $data['ourVisionPage'] = Page::where('slug','our-vision')->where('status', 1)->first();
             $data['blogs'] = Post::where('status', 1)->get();
             return view('frontend.index', $data);
         } catch (\Throwable $th) {
-            dd($th);
         }
     }
 

@@ -24,28 +24,14 @@
                             </div>
                             <div class="weight-footer-item-link">
                                 <ul class="list-unstyled mb-0">
-                                    <li>
-                                        <a href="about.html">
-                                            About us
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="services.html">
-                                            Services
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="pricing.html">
-                                            Pricing
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="team.html">
-                                            Team
-                                        </a>
-                                    </li>
+                                    @foreach(json_decode(getConfigTableData()?->menu_json) as  $menuKey => $menuDatum)
+
+                                        <li>
+                                            <a href="{{url($menuDatum->href)}}">{{$menuDatum->text}}</a>
+                                        </li>
+                                    @endforeach
                                     <li class="mb-0">
-                                        <a href="contact.html">
+                                        <a href="#contact">
                                             Contact us
                                         </a>
                                     </li>
@@ -74,7 +60,8 @@
                                                 class="fab fa-facebook-f"></i></a></li>
                                     <li class="d-inline-block mb-0"><a href="{{getConfigTableData()?->twitter_url}}"><i
                                                 class="fab fa-twitter"></i></a></li>
-                                    <li class="d-inline-block mb-0"><a href="{{getConfigTableData()?->instagram_url}}"><i
+                                    <li class="d-inline-block mb-0"><a
+                                            href="{{getConfigTableData()?->instagram_url}}"><i
                                                 class="fab fa-instagram"></i></a></li>
                                 </ul>
                             </div>
@@ -89,7 +76,8 @@
                                 <div class="weight-footer-item-form-input">
                                     <input type="email" placeholder="Enter your email">
                                     <button class="border-0" value="">
-                                        <img src="{{asset('frontend/assets/image/submit-img.png')}}" alt="submit-img" class="img-fluid">
+                                        <img src="{{asset('frontend/assets/image/submit-img.png')}}" alt="submit-img"
+                                             class="img-fluid">
                                     </button>
                                 </div>
                                 <div class="form-group mb-0">
