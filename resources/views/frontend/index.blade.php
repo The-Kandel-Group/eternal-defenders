@@ -1,6 +1,6 @@
 @extends('frontend.master')
 @section('content')
-    <section id="training">
+    <section id="about">
         <div class="informationmain-con dots-left-img w-100">
             <div class="container overlay-content">
                 <div class="row">
@@ -58,7 +58,7 @@
         </div>
     </section>
     <!-- service-section -->
-    <section class="#service">
+    <section class="#service" id="service">
         <div class="Effective-con bg-overly-img w-100">
             <div class="container overlay-content">
                 <div class="Effective-sec-heading text-center">
@@ -599,7 +599,7 @@
         </div>
     </section>
     <!-- blog-post-section -->
-    <section>
+    <section id="blog">
         <div class="blog-post-con dots-right-img">
             <div class="container overlay-content">
                 <div class="blog-post-heading text-center">

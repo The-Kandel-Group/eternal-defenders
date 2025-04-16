@@ -53,8 +53,8 @@
                                     </p>
                                 </div>
                                 <div class="banner-btn">
-                                    <a href="about.html" class="contact-btn">Get started</a>
-                                    <a href="contact.html" class="contact-btn contact-banner-btn">Contact us</a>
+                                    <a href="#about" class="contact-btn">Get started</a>
+                                    <a href="#contact" class="contact-btn contact-banner-btn">Contact us</a>
                                 </div>
                             </div>
                         </div>

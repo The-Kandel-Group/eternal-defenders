@@ -17,7 +17,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-2 col-md-3 col-5">
+                    <div class="col-lg-2 col-md-3 col-5" id="about">
                         <div class="weight-footer-item mb-lg-0 mb-md-0 mb-3">
                             <div class="weight-footer-item-title">
                                 <h3>About Us</h3>
@@ -39,10 +39,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-4 col-7">
+                    <div class="col-lg-3 col-md-4 col-7" id="">
                         <div class="weight-footer-item mb-lg-0 mb-md-0 mb-3">
                             <div class="weight-footer-item-title">
-                                <h3>Our Services</h3>
+                                <h3>Contact Us</h3>
                             </div>
                             <div class="weight-footer-item-content weight-footer-item-link">
                                 <ul class="list-unstyled mb-0 social-icon-list">
