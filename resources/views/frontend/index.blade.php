@@ -566,24 +566,7 @@
                                 <p>{{$vacanciesDatum->sub_title}}
                                     <span class="dots">...</span></p>
                                 <div class="more" style="display: none;">
-                                    <h5>Responsibilities</h5>
-                                    <ul style="color: #f4f4f4; margin-left: 20px;">
-                                        <li>Monitor SIEM dashboards and review logs from firewalls and IDS/IPS.</li>
-                                        <li>Perform initial incident triage and escalate critical alerts.</li>
-                                        <li>Document incidents and assist with post-incident reviews.</li>
-                                    </ul>
-                                    <h5>Qualifications</h5>
-                                    <ul style="color: #f4f4f4; margin-left: 20px;">
-                                        <li>Bachelor’s degree in Computer Science, IT, or equivalent.</li>
-                                        <li>Basic understanding of networking protocols and OS fundamentals.</li>
-                                    </ul>
-                                    <h5>Requirements & Tools</h5>
-                                    <ul style="color: #f4f4f4; margin-left: 20px;">
-                                        <li>Familiarity with SIEM tools and log analysis techniques.</li>
-                                        <li>Basic scripting skills (Python, Shell, PowerShell).</li>
-                                        <li>Exposure to Slack, Microsoft Teams, Jira, and Trello.</li>
-                                        <li>Cloud fundamentals are a plus.</li>
-                                    </ul>
+                                   {!! $vacanciesDatum->description !!}
                                 </div>
                                 <a class="blog-post-item-title-link readBtn" href="javascript:void(0)"
                                    onclick="readMore(this)">Read more <i class="fas fa-chevron-right"></i></a>
@@ -619,7 +602,7 @@
                         <div class="col-lg-6 col-md-6 col-12 {{$slideLeftRight}} ">
                             <div class="blog-post-item">
                                 <div class="blog-post-item-img">
-                                    <a href="single-post.html">
+                                    <a href="#">
                                         <figure class="mb-0">
                                             <img
                                                     src="{{$blogsDatum->image??asset('frontend/assets/image/blog-post-img1.png')}}"
@@ -632,11 +615,11 @@
                                     {{--                                <a href="single-post.html">--}}
                                     {{--                                    <h6>Trend In Design</h6>--}}
                                     {{--                                </a>--}}
-                                    <a href="single-post.html">
+                                    <a href="#">
                                         <h4 class="mb-3">{{$blogsDatum->title}}
                                         </h4>
                                     </a>
-                                    <a href="single-post.html" class="blog-post-item-title-link">Read more <i
+                                    <a href="#" class="blog-post-item-title-link">Read more <i
                                                 class="fas fa-chevron-right"></i></a>
                                 </div>
                             </div>

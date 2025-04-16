@@ -57,12 +57,12 @@
                                         <a href="tel:{{getConfigTableData()?->primary_phone_number}}">{{getConfigTableData()?->primary_phone_number}}</a>
                                     </li>
                                     <li class="d-inline-block mb-0"><a href="{{getConfigTableData()?->facebook_url}}"><i
-                                                class="fab fa-facebook-f"></i></a></li>
+                                                    class="fab fa-facebook-f"></i></a></li>
                                     <li class="d-inline-block mb-0"><a href="{{getConfigTableData()?->twitter_url}}"><i
-                                                class="fab fa-twitter"></i></a></li>
+                                                    class="fab fa-twitter"></i></a></li>
                                     <li class="d-inline-block mb-0"><a
-                                            href="{{getConfigTableData()?->instagram_url}}"><i
-                                                class="fab fa-instagram"></i></a></li>
+                                                href="{{getConfigTableData()?->instagram_url}}"><i
+                                                    class="fab fa-instagram"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -72,19 +72,28 @@
                             <div class="weight-footer-item-title">
                                 <h3 class="Newsletter-title">Newsletter</h3>
                             </div>
-                            <div class="weight-footer-item-form">
-                                <div class="weight-footer-item-form-input">
-                                    <input type="email" placeholder="Enter your email">
-                                    <button class="border-0" value="">
-                                        <img src="{{asset('frontend/assets/image/submit-img.png')}}" alt="submit-img"
-                                             class="img-fluid">
-                                    </button>
+                            <form action="{{route('saveNewsletter')}}" method="post">
+                                @csrf
+                                <div class="weight-footer-item-form">
+                                    <div class="weight-footer-item-form-input">
+                                        <input required type="email" name="email" placeholder="Enter your email"
+                                               value="{{ old('email') }}">
+                                        @if ($errors->has('email'))
+                                            <div class="text-danger">{{ $errors->first('email') }}</div>
+                                        @endif
+                                        <button type="submit" class="border-0" value="">
+                                            <img src="{{asset('frontend/assets/image/submit-img.png')}}"
+                                                 alt="submit-img"
+                                                 class="img-fluid">
+                                        </button>
+                                    </div>
+                                    <div class="form-group mb-0">
+                                        <input required type="checkbox" name="accept" id="html">
+                                        <label for="html" class="checkbox-details mb-0">I Agree to the Terms</label>
+                                    </div>
                                 </div>
-                                <div class="form-group mb-0">
-                                    <input type="checkbox" id="html">
-                                    <label for="html" class="checkbox-details mb-0">I Agree to the Terms</label>
-                                </div>
-                            </div>
+                                <input type="hidden" value="News Letter" name="title">
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -133,3 +142,25 @@
         });
     </script>
 @endif
+<script>
+    function readMore(button) {
+        // Find the parent container of the clicked button
+        var container = button.closest("div");
+
+        // Locate the specific elements inside this container
+        var dots = container.querySelector(".dots");
+        var moreText = container.querySelector(".more");
+        var btnText = button;
+
+        // Toggle visibility
+        if (dots.style.display === "none") {
+            dots.style.display = "inline";
+            btnText.innerHTML = 'Read more <i class="fas fa-chevron-right"></i>';
+            moreText.style.display = "none";
+        } else {
+            dots.style.display = "none";
+            btnText.innerHTML = 'Read less <i class="fas fa-chevron-up"></i>';
+            moreText.style.display = "block";
+        }
+    }
+</script>

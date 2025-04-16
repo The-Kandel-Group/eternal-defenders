@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Public;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\System\ContactUsRequest;
+use App\Http\Requests\System\NewsletterSubscriptionRequest;
 use App\Models\ContactUs;
 use App\Models\CoreValues;
+use App\Models\NewsletterSubscription;
 use App\Models\Page;
 use App\Models\Post;
 use App\Models\ServiceCategory;
@@ -75,6 +77,19 @@ class IndexController extends Controller
             session()->flash('error', 'Something went wrong.');
             return redirect()->back()->withInput(); // keep the form inputs
         }
+    }
 
+    public function saveNewsletter(NewsletterSubscriptionRequest $request)
+    {
+        try {
+            $data = $request->all();
+            NewsletterSubscription::create($data);
+            session()->flash('success', 'Your have been subscribed!');
+            return redirect()->back();
+        } catch (\Throwable $th) {
+            dd($th);
+            session()->flash('error', 'Something went wrong.');
+            return redirect()->back()->withInput();
+        }
     }
 }

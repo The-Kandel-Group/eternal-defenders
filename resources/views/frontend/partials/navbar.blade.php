@@ -21,12 +21,13 @@
                             <ul class="navbar-nav">
                                 @foreach(json_decode(getConfigTableData()?->menu_json) as  $menuKey => $menuDatum)
                                     <li class="nav-item active">
-                                        <a class="nav-link text-white p-0" href="{{url($menuDatum->href)}}">{{$menuDatum->text}}</a>
+                                        <a class="nav-link text-white p-0"
+                                           href="{{url($menuDatum->href)}}">{{$menuDatum->text}}</a>
                                     </li>
 
                                 @endforeach
                             </ul>
-                            <a href="contact.html" class=" my-2 my-sm-0 contact-btn">Contact us</a>
+                            <a href="#contact" class=" my-2 my-sm-0 contact-btn">Contact us</a>
                         </div>
                     </nav>
                 </div>
