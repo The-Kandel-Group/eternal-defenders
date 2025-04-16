@@ -137,57 +137,57 @@ return [
 
             ],
         ],
-        [
-            'name' => 'Vacancy Application',
-            'icon' => "<i class='fa fa-mail-forward'></i>",
-            'hasSubmodules' => false,
-            'route' => $vacancyApplicationUrl,
-            'routeIndexName' => 'vacancy-applications.index',
-            'routeName' => 'vacancy-applications',
-            'permissions' => [
-                [
-                    'name' => 'View Vacancy Application',
-                    'route' => [
-                        'url' => $vacancyApplicationUrl,
-                        'method' => $getMethod,
-                    ],
-                ],
-                [
-                    'name' => 'Create Vacancy Application',
-                    'route' => [
-                        [
-                            'url' => $vacancyApplicationUrl . '/create',
-                            'method' => $getMethod,
-                        ],
-                        [
-                            'url' => $vacancyApplicationUrl,
-                            'method' => $postMethod,
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'Edit Vacancy Application',
-                    'route' => [
-                        [
-                            'url' => $vacancyApplicationUrl . '/*/edit',
-                            'method' => $getMethod,
-                        ],
-                        [
-                            'url' => $vacancyApplicationUrl . '/*',
-                            'method' => $putMethod,
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'Delete Vacancy Application',
-                    'route' => [
-                        'url' => $vacancyApplicationUrl . '/*',
-                        'method' => $deleteMethod,
-                    ],
-                ]
-
-            ],
-        ],
+//        [
+//            'name' => 'Vacancy Application',
+//            'icon' => "<i class='fa fa-mail-forward'></i>",
+//            'hasSubmodules' => false,
+//            'route' => $vacancyApplicationUrl,
+//            'routeIndexName' => 'vacancy-applications.index',
+//            'routeName' => 'vacancy-applications',
+//            'permissions' => [
+//                [
+//                    'name' => 'View Vacancy Application',
+//                    'route' => [
+//                        'url' => $vacancyApplicationUrl,
+//                        'method' => $getMethod,
+//                    ],
+//                ],
+//                [
+//                    'name' => 'Create Vacancy Application',
+//                    'route' => [
+//                        [
+//                            'url' => $vacancyApplicationUrl . '/create',
+//                            'method' => $getMethod,
+//                        ],
+//                        [
+//                            'url' => $vacancyApplicationUrl,
+//                            'method' => $postMethod,
+//                        ],
+//                    ],
+//                ],
+//                [
+//                    'name' => 'Edit Vacancy Application',
+//                    'route' => [
+//                        [
+//                            'url' => $vacancyApplicationUrl . '/*/edit',
+//                            'method' => $getMethod,
+//                        ],
+//                        [
+//                            'url' => $vacancyApplicationUrl . '/*',
+//                            'method' => $putMethod,
+//                        ],
+//                    ],
+//                ],
+//                [
+//                    'name' => 'Delete Vacancy Application',
+//                    'route' => [
+//                        'url' => $vacancyApplicationUrl . '/*',
+//                        'method' => $deleteMethod,
+//                    ],
+//                ]
+//
+//            ],
+//        ],
         [
             'name' => 'Core Values',
             'icon' => "<i class='fa fa-campground'></i>",
