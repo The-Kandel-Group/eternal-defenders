@@ -11,6 +11,7 @@ use App\Models\NewsletterSubscription;
 use App\Models\Page;
 use App\Models\Post;
 use App\Models\ServiceCategory;
+use App\Models\Slider;
 use App\Models\Vacancy;
 
 
@@ -46,6 +47,7 @@ class IndexController extends Controller
             $data['missionPage'] = Page::where('slug','our-mission')->where('status', 1)->first();
             $data['ourVisionPage'] = Page::where('slug','our-vision')->where('status', 1)->first();
             $data['blogs'] = Post::where('status', 1)->get();
+            $data['sliders'] = Slider::where('status', 1)->get();
             return view('frontend.index', $data);
         } catch (\Throwable $th) {
         }
