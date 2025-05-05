@@ -17,7 +17,7 @@ class Service
     public function __construct($model)
     {
         $this->model = $model;
-        $this->fullImageUploadPath=getImageUploadFirstLevelPath().'/'.strtolower(class_basename(get_class($this->model))).'/';
+        $this->fullImageUploadPath = getImageUploadFirstLevelPath() . '/' . strtolower(class_basename(get_class($this->model))) . '/';
     }
 
     // get all data
@@ -33,10 +33,10 @@ class Service
         $table = $this->model->getTable();
         if ($keyword) {
             if (Schema::hasColumn($table, 'name')) {
-                $query->orWhereRaw('LOWER(name) LIKE ?', ['%'.strtolower($keyword).'%']);
+                $query->orWhereRaw('LOWER(name) LIKE ?', ['%' . strtolower($keyword) . '%']);
             }
             if (Schema::hasColumn($table, 'title')) {
-                $query->orWhereRaw('LOWER(title) LIKE ?', ['%'.strtolower($keyword).'%']);
+                $query->orWhereRaw('LOWER(title) LIKE ?', ['%' . strtolower($keyword) . '%']);
             }
         }
         if ($pagination) {
@@ -64,22 +64,22 @@ class Service
     {
         $data = $request->except('_token');
         if ($request->file('image')) {
-            $data['image'] = $this->fullImageUploadPath . uploadImage($this->fullImageUploadPath, 'image', true, 1920, null);
+            $data['image'] = $this->fullImageUploadPath . uploadImage($this->fullImageUploadPath, 'image', false, );
         }
 
         if ($request->file('logo')) {
-            $data['logo'] = $this->fullImageUploadPath . uploadImage($this->fullImageUploadPath, 'logo', true, 200, null);
+            $data['logo'] = $this->fullImageUploadPath . uploadImage($this->fullImageUploadPath, 'logo', false);
         }
 
         if ($request->file('banner')) {
-            $data['banner'] = $this->fullImageUploadPath . uploadImage($this->fullImageUploadPath, 'banner', true,1920 , null);
+            $data['banner'] = $this->fullImageUploadPath . uploadImage($this->fullImageUploadPath, 'banner', false);
         }
 
         if ($request->file('thumbnail_image')) {
-            $data['thumbnail_image'] = $this->fullImageUploadPath . uploadImage($this->fullImageUploadPath, 'thumbnail_image', true,1920 );
+            $data['thumbnail_image'] = $this->fullImageUploadPath . uploadImage($this->fullImageUploadPath, 'thumbnail_image');
         }
         if ($request->file('icon')) {
-            $data['icon'] = $this->fullImageUploadPath . uploadImage($this->fullImageUploadPath, 'icon', false, 200, null);
+            $data['icon'] = $this->fullImageUploadPath . uploadImage($this->fullImageUploadPath, 'icon', false);
         }
         return $this->model->create($data);
     }
@@ -99,31 +99,31 @@ class Service
             if ($imagePath && file_exists(public_path($imagePath))) {
                 removeImage($imagePath);
             }
-            $data['image'] = $this->fullImageUploadPath . uploadImage($this->fullImageUploadPath, 'image', true, 1920, null);
+            $data['image'] = $this->fullImageUploadPath . uploadImage($this->fullImageUploadPath, 'image', false);
         }
         if ($request->hasFile('logo')) {
             if ($logoPath && file_exists(public_path($logoPath))) {
                 removeImage($logoPath);
             }
-            $data['logo'] = $this->fullImageUploadPath . uploadImage($this->fullImageUploadPath, 'logo', true, 200, null);
+            $data['logo'] = $this->fullImageUploadPath . uploadImage($this->fullImageUploadPath, 'logo', false);
         }
         if ($request->hasFile('banner')) {
             if ($bannerPath && file_exists(public_path($bannerPath))) {
                 removeImage($bannerPath);
             }
-            $data['banner'] = $this->fullImageUploadPath . uploadImage($this->fullImageUploadPath, 'banner', true, 1920, null);
+            $data['banner'] = $this->fullImageUploadPath . uploadImage($this->fullImageUploadPath, 'banner', false);
         }
         if ($request->hasFile('thumbnail_image')) {
             if ($thumbnailImage && file_exists(public_path($thumbnailImage))) {
                 removeImage($thumbnailImage);
             }
-            $data['thumbnail_image'] = $this->fullImageUploadPath . uploadImage($this->fullImageUploadPath, 'thumbnail_image', true, 1920, null);
+            $data['thumbnail_image'] = $this->fullImageUploadPath . uploadImage($this->fullImageUploadPath, 'thumbnail_image', false);
         }
         if ($request->hasFile('icon')) {
             if ($icon && file_exists(public_path($icon))) {
                 removeImage($icon);
             }
-            $data['icon'] = $this->fullImageUploadPath . uploadImage($this->fullImageUploadPath, 'icon', false,  null);
+            $data['icon'] = $this->fullImageUploadPath . uploadImage($this->fullImageUploadPath, 'icon', false);
         }
         $update->fill($data)->save();
         $update = $this->itemByIdentifier($id);

@@ -661,14 +661,14 @@
                     @csrf
                     <div class="row">
                         <div class=" col-6">
-                            <input type="text" placeholder="First Name" name="first_name" id="first_name"
+                            <input required type="text" placeholder="First Name" name="first_name" id="first_name"
                                    value="{{ old('first_name') }}">
                             @if ($errors->has('first_name'))
                                 <div class="text-danger">{{ $errors->first('first_name') }}</div>
                             @endif
                         </div>
                         <div class="col-6">
-                            <input type="text" placeholder="Last Name" name="last_name" id="last_name"
+                            <input required type="text" placeholder="Last Name" name="last_name" id="last_name"
                                    value="{{ old('last_name') }}">
                             @if ($errors->has('last_name'))
                                 <div class="text-danger">{{ $errors->first('last_name') }}</div>
@@ -677,13 +677,13 @@
                     </div>
                     <div class="row mt-4">
                         <div class="col-6">
-                            <input type="email" placeholder="Email" name="email" id="email" value="{{ old('email') }}">
+                            <input required type="email" placeholder="Email" name="email" id="email" value="{{ old('email') }}">
                             @if ($errors->has('email'))
                                 <div class="text-danger">{{ $errors->first('email') }}</div>
                             @endif
                         </div>
                         <div class="col-6">
-                            <input type="tel" placeholder="Mobile Number" name="mobile_number" id="mobile_number"
+                            <input required type="tel" placeholder="Mobile Number" name="mobile_number" id="mobile_number"
                                    value="{{ old('mobile_number') }}">
                             @if ($errors->has('mobile_number'))
                                 <div class="text-danger">{{ $errors->first('mobile_number') }}</div>
@@ -693,7 +693,7 @@
 
                     <div class="row">
                         <div class="col-lg-12">
-                                <textarea class="w-100" placeholder="Message" rows="3" name="message"
+                                <textarea required class="w-100" placeholder="Message" rows="3" name="message"
                                           id="message">{{ old('message') }}</textarea>
                             @if ($errors->has('message'))
                                 <div class="text-danger">{{ $errors->first('message') }}</div>
