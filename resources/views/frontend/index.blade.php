@@ -97,7 +97,7 @@
                                                      style="background: rgba(255, 255, 255, 0.1); border-radius: 10px;">
                                                     <div class="row align-items-center">
                                                         <div class="col-1 pr-2">
-                                                            <h5 class="m-0"><i class="{{$servicesDatum->icon}}"></i></h5>
+                                                            <h5 class="m-0"><i class="{{$servicesDatum->icon_fa}}"></i></h5>
                                                         </div>
                                                         <div class="col-3 pl-2">
                                                             <h5 class="m-0">{{$servicesDatum->title}}</h5>
