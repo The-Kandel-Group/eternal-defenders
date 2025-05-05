@@ -10,4 +10,6 @@
     <link rel="stylesheet" href="{{asset('frontend/assets/css/mobile.css')}}">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>{{getConfigTableData()?->company_name}}</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="{{ asset('frontend/assets/js/toast.js') }}"></script>
 </head>
