@@ -13,7 +13,7 @@ first change:    05/01/2022
 4. banner section / #banner
 5. slider section / #slider
 6. information section / #information
-7. Effective section / #Effective 
+7. Effective section / #Effective
 8. Cyber Security section/ #Cyber Security
 9. service section / #service
 10. Pricing section / #Pricing
@@ -53,6 +53,7 @@ body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color:white;
 }
 :root{
     --primary--color: #ffffff;
@@ -347,7 +348,7 @@ body{
      position: absolute;
     z-index: 1;
     right: 0;
-    bottom: 0; 
+    bottom: 0;
     background: var(--accent);
     padding: 47px 43px 48px 42px;
     width: 25%;
@@ -760,10 +761,10 @@ body{
 }
 .form-group input {
     display: none;
-  }  
+  }
   .form-group label {
     position: relative;
-  }  
+  }
   .form-group label:before {
     content:'';
     -webkit-appearance: none;
@@ -905,7 +906,7 @@ body{
     padding: 50px 0;
     font-weight: 400;
     text-align: center;
-  }  
+  }
   #tsum-tabs p {
     margin: 0 0 5px;
   }
@@ -915,29 +916,29 @@ body{
   }
   .tab-sec-img{
       margin-left: -7px;
-  }  
+  }
   #tsum-tabs section {
     display: none;
     padding: 67px 0 0;
-  }  
+  }
   #tsum-tabs input {
     display: none;
-  }  
+  }
   #tsum-tabs label {
     display: inline-block;
     width: 22%;
     text-align: center;
     margin: 0 15px;
-  }  
+  }
   #tsum-tabs label:before {
     font-family: fontawesome;
     font-weight: normal;
     margin-right: 10px;
-  }  
+  }
   #tsum-tabs label:hover {
     color: #888;
     cursor: pointer;
-  }   
+  }
   #tsum-tabs #tab1:checked ~ #content1,
   #tsum-tabs #tab2:checked ~ #content2,
   #tsum-tabs #tab3:checked ~ #content3,
@@ -975,7 +976,7 @@ body{
     left: 50%;
     transform: translate(-15px, 97px);
     top: 50%;
-  } 
+  }
 
   @media screen and (max-width: 650px) {
     #tsum-tabs label {
@@ -986,7 +987,7 @@ body{
       font-size: 18px;
     }
   }
-  
+
   @media screen and (max-width: 400px) {
     #tsum-tabs label {
       padding: 15px;
@@ -1056,8 +1057,8 @@ body{
       display: inline-block;
   }
   .Testimonials-item-content P{
-      font-size: 20px; 
-      margin-bottom: 28px;    
+      font-size: 20px;
+      margin-bottom: 28px;
   }
   .Testimonials-section-heading h2{
       margin-bottom: 39px;
@@ -1304,7 +1305,7 @@ body{
 
     display: inline-block;
     text-decoration: none;
-    
+
 }
 .team-social-icon a i{
     font-size: 16px;
@@ -1334,7 +1335,7 @@ body{
     margin-right: 5px;
     border-radius: 6px;
     color: #fff;
-  }  
+  }
   .skillbar{
     background-color:var(--accent);
     width:0px;
