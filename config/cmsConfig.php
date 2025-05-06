@@ -349,63 +349,63 @@ return [
         ],
 
 
-        [
-            'name' => ' Events',
-            'icon' => "<i class='fa fa-cube'></i>",
-            'hasSubmodules' => false,
-            'route' => $eventUrl,
-            'routeIndexName' => 'events.index',
-            'routeName' => 'events',
-            'permissions' => [
-                [
-                    'name' => 'View Event',
-                    'route' => [
-                        'url' => $eventUrl,
-                        'method' => $getMethod,
-                    ],
-                ],
-                [
-                    'name' => 'Create Event',
-                    'route' => [
-                        [
-                            'url' => $eventUrl . '/create',
-                            'method' => $getMethod,
-                        ],
-                        [
-                            'url' => $eventUrl,
-                            'method' => $postMethod,
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'Edit Event',
-                    'route' => [
-                        [
-                            'url' => $eventUrl . '/*/edit',
-                            'method' => $getMethod,
-                        ],
-                        [
-                            'url' => $eventUrl . '/*',
-                            'method' => $putMethod,
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'Delete Event',
-                    'route' => [
-                        'url' => $eventUrl . '/*',
-                        'method' => $deleteMethod,
-                    ],
-                ],
-                [
-                    'name' => 'Delete  Event Gallery',
-                    'route' => [
-                        'url' => $eventUrl . '/delete-gallery/*',
-                        'method' => $getMethod,
-                    ],
-                ],
-            ],
-        ],
+//        [
+//            'name' => ' Events',
+//            'icon' => "<i class='fa fa-cube'></i>",
+//            'hasSubmodules' => false,
+//            'route' => $eventUrl,
+//            'routeIndexName' => 'events.index',
+//            'routeName' => 'events',
+//            'permissions' => [
+//                [
+//                    'name' => 'View Event',
+//                    'route' => [
+//                        'url' => $eventUrl,
+//                        'method' => $getMethod,
+//                    ],
+//                ],
+//                [
+//                    'name' => 'Create Event',
+//                    'route' => [
+//                        [
+//                            'url' => $eventUrl . '/create',
+//                            'method' => $getMethod,
+//                        ],
+//                        [
+//                            'url' => $eventUrl,
+//                            'method' => $postMethod,
+//                        ],
+//                    ],
+//                ],
+//                [
+//                    'name' => 'Edit Event',
+//                    'route' => [
+//                        [
+//                            'url' => $eventUrl . '/*/edit',
+//                            'method' => $getMethod,
+//                        ],
+//                        [
+//                            'url' => $eventUrl . '/*',
+//                            'method' => $putMethod,
+//                        ],
+//                    ],
+//                ],
+//                [
+//                    'name' => 'Delete Event',
+//                    'route' => [
+//                        'url' => $eventUrl . '/*',
+//                        'method' => $deleteMethod,
+//                    ],
+//                ],
+//                [
+//                    'name' => 'Delete  Event Gallery',
+//                    'route' => [
+//                        'url' => $eventUrl . '/delete-gallery/*',
+//                        'method' => $getMethod,
+//                    ],
+//                ],
+//            ],
+//        ],
         [
             'name' => 'Contact Us',
             'icon' => "<i class='fa fa-phone'></i>",
@@ -538,57 +538,57 @@ return [
                 ],
             ],
         ],
-        [
-            'name' => 'Testimonial',
-            'icon' => "<i class='fa fa-user-friends'></i>",
-            'hasSubmodules' => false,
-            'route' => $testimonialUrl,
-            'routeIndexName' => 'testimonials.index',
-            'routeName' => 'testimonials',
-            'permissions' => [
-                [
-                    'name' => 'View Testimonial',
-                    'route' => [
-                        'url' => $testimonialUrl,
-                        'method' => $getMethod,
-                    ],
-                ],
-                [
-                    'name' => 'Create Testimonial',
-                    'route' => [
-                        [
-                            'url' => $testimonialUrl . '/create',
-                            'method' => $getMethod,
-                        ],
-                        [
-                            'url' => $testimonialUrl,
-                            'method' => $postMethod,
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'Edit Testimonial',
-                    'route' => [
-                        [
-                            'url' => $testimonialUrl . '/*/edit',
-                            'method' => $getMethod,
-                        ],
-                        [
-                            'url' => $testimonialUrl . '/*',
-                            'method' => $putMethod,
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'Delete Testimonial',
-                    'route' => [
-                        'url' => $testimonialUrl . '/*',
-                        'method' => $deleteMethod,
-                    ],
-                ]
-            ],
-
-        ],
+//        [
+//            'name' => 'Testimonial',
+//            'icon' => "<i class='fa fa-user-friends'></i>",
+//            'hasSubmodules' => false,
+//            'route' => $testimonialUrl,
+//            'routeIndexName' => 'testimonials.index',
+//            'routeName' => 'testimonials',
+//            'permissions' => [
+//                [
+//                    'name' => 'View Testimonial',
+//                    'route' => [
+//                        'url' => $testimonialUrl,
+//                        'method' => $getMethod,
+//                    ],
+//                ],
+//                [
+//                    'name' => 'Create Testimonial',
+//                    'route' => [
+//                        [
+//                            'url' => $testimonialUrl . '/create',
+//                            'method' => $getMethod,
+//                        ],
+//                        [
+//                            'url' => $testimonialUrl,
+//                            'method' => $postMethod,
+//                        ],
+//                    ],
+//                ],
+//                [
+//                    'name' => 'Edit Testimonial',
+//                    'route' => [
+//                        [
+//                            'url' => $testimonialUrl . '/*/edit',
+//                            'method' => $getMethod,
+//                        ],
+//                        [
+//                            'url' => $testimonialUrl . '/*',
+//                            'method' => $putMethod,
+//                        ],
+//                    ],
+//                ],
+//                [
+//                    'name' => 'Delete Testimonial',
+//                    'route' => [
+//                        'url' => $testimonialUrl . '/*',
+//                        'method' => $deleteMethod,
+//                    ],
+//                ]
+//            ],
+//
+//        ],
         [
             'name' => 'Newsletter Subscription',
             'icon' => "<i class='fa fa-envelope'></i>",
@@ -640,57 +640,57 @@ return [
             ],
 
         ],
-        [
-            'name' => 'Partner',
-            'icon' => "<i class='fa fa-user-graduate'></i>",
-            'hasSubmodules' => false,
-            'route' => $partnerUrl,
-            'routeIndexName' => 'partners.index',
-            'routeName' => 'partners',
-            'permissions' => [
-                [
-                    'name' => 'View Partner',
-                    'route' => [
-                        'url' => $partnerUrl,
-                        'method' => $getMethod,
-                    ],
-                ],
-                [
-                    'name' => 'Create Partner',
-                    'route' => [
-                        [
-                            'url' => $partnerUrl . '/create',
-                            'method' => $getMethod,
-                        ],
-                        [
-                            'url' => $partnerUrl,
-                            'method' => $postMethod,
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'Edit Partner',
-                    'route' => [
-                        [
-                            'url' => $partnerUrl . '/*/edit',
-                            'method' => $getMethod,
-                        ],
-                        [
-                            'url' => $testimonialUrl . '/*',
-                            'method' => $putMethod,
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'Delete Testimonial',
-                    'route' => [
-                        'url' => $testimonialUrl . '/*',
-                        'method' => $deleteMethod,
-                    ],
-                ]
-            ],
-
-        ],
+//        [
+//            'name' => 'Partner',
+//            'icon' => "<i class='fa fa-user-graduate'></i>",
+//            'hasSubmodules' => false,
+//            'route' => $partnerUrl,
+//            'routeIndexName' => 'partners.index',
+//            'routeName' => 'partners',
+//            'permissions' => [
+//                [
+//                    'name' => 'View Partner',
+//                    'route' => [
+//                        'url' => $partnerUrl,
+//                        'method' => $getMethod,
+//                    ],
+//                ],
+//                [
+//                    'name' => 'Create Partner',
+//                    'route' => [
+//                        [
+//                            'url' => $partnerUrl . '/create',
+//                            'method' => $getMethod,
+//                        ],
+//                        [
+//                            'url' => $partnerUrl,
+//                            'method' => $postMethod,
+//                        ],
+//                    ],
+//                ],
+//                [
+//                    'name' => 'Edit Partner',
+//                    'route' => [
+//                        [
+//                            'url' => $partnerUrl . '/*/edit',
+//                            'method' => $getMethod,
+//                        ],
+//                        [
+//                            'url' => $testimonialUrl . '/*',
+//                            'method' => $putMethod,
+//                        ],
+//                    ],
+//                ],
+//                [
+//                    'name' => 'Delete Testimonial',
+//                    'route' => [
+//                        'url' => $testimonialUrl . '/*',
+//                        'method' => $deleteMethod,
+//                    ],
+//                ]
+//            ],
+//
+//        ],
 
         [
             'name' => 'Slider',
@@ -744,57 +744,57 @@ return [
 
         ],
 
-        [
-            'name' => 'Team',
-            'icon' => "<i class='fa fa-users'></i>",
-            'hasSubmodules' => false,
-            'route' => $teamUrl,
-            'routeIndexName' => 'teams.index',
-            'routeName' => 'teams',
-            'permissions' => [
-                [
-                    'name' => 'View Team',
-                    'route' => [
-                        'url' => $teamUrl,
-                        'method' => $getMethod,
-                    ],
-                ],
-                [
-                    'name' => 'Create Team',
-                    'route' => [
-                        [
-                            'url' => $teamUrl . '/create',
-                            'method' => $getMethod,
-                        ],
-                        [
-                            'url' => $teamUrl,
-                            'method' => $postMethod,
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'Edit Team',
-                    'route' => [
-                        [
-                            'url' => $teamUrl . '/*/edit',
-                            'method' => $getMethod,
-                        ],
-                        [
-                            'url' => $teamUrl . '/*',
-                            'method' => $putMethod,
-                        ],
-                    ],
-                ],
-                [
-                    'name' => 'Delete Team',
-                    'route' => [
-                        'url' => $teamUrl . '/*',
-                        'method' => $deleteMethod,
-                    ],
-                ]
-            ],
-
-        ],
+//        [
+//            'name' => 'Team',
+//            'icon' => "<i class='fa fa-users'></i>",
+//            'hasSubmodules' => false,
+//            'route' => $teamUrl,
+//            'routeIndexName' => 'teams.index',
+//            'routeName' => 'teams',
+//            'permissions' => [
+//                [
+//                    'name' => 'View Team',
+//                    'route' => [
+//                        'url' => $teamUrl,
+//                        'method' => $getMethod,
+//                    ],
+//                ],
+//                [
+//                    'name' => 'Create Team',
+//                    'route' => [
+//                        [
+//                            'url' => $teamUrl . '/create',
+//                            'method' => $getMethod,
+//                        ],
+//                        [
+//                            'url' => $teamUrl,
+//                            'method' => $postMethod,
+//                        ],
+//                    ],
+//                ],
+//                [
+//                    'name' => 'Edit Team',
+//                    'route' => [
+//                        [
+//                            'url' => $teamUrl . '/*/edit',
+//                            'method' => $getMethod,
+//                        ],
+//                        [
+//                            'url' => $teamUrl . '/*',
+//                            'method' => $putMethod,
+//                        ],
+//                    ],
+//                ],
+//                [
+//                    'name' => 'Delete Team',
+//                    'route' => [
+//                        'url' => $teamUrl . '/*',
+//                        'method' => $deleteMethod,
+//                    ],
+//                ]
+//            ],
+//
+//        ],
         [
             'name' => 'Post',
             'icon' => "<i class='fa fa-signs-post' aria-hidden='true'></i>",

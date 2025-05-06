@@ -34,46 +34,48 @@
             </div>
             <!--navbar-end-->
         </header>
-        <section class="banner-main-con">
-            <div class="container">
-                <!--banner-start-->
-                <div class="banner-con">
-                    @foreach($sliders as $slidersDatum)
-                        <div class="row">
-                            <div
+        @if(isset($sliders))
+            <section class="banner-main-con">
+                <div class="container">
+                    <!--banner-start-->
+                    <div class="banner-con">
+                        @foreach($sliders as $slidersDatum)
+                            <div class="row">
+                                <div
                                     class="col-lg-7 col-md-7 col-sm-12 d-flex justify-content-center flex-column banner-main-left-con">
-                                <div class="banner-left-con wow slideInLeft">
-                                    <div class="banner-heading">
-                                        <h1>{{$slidersDatum->title}}
-                                        </h1>
+                                    <div class="banner-left-con wow slideInLeft">
+                                        <div class="banner-heading">
+                                            <h1>{{$slidersDatum->title}}
+                                            </h1>
+                                        </div>
+                                        <div class="banner-content">
+                                            <p class="col-lg-11 pl-0 pr-0">{!! $slidersDatum->short_description !!}
+                                            </p>
+                                        </div>
+                                        <div class="banner-btn">
+                                            <a href="{{$slidersDatum?->button1_link??'#about'}}"
+                                               class="contact-btn">{{$slidersDatum?->button1_label??'Get started'}}</a>
+                                            <a href="{{$slidersDatum?->button1_link??'#contact'}}"
+                                               class="contact-btn contact-banner-btn">{{$slidersDatum?->button1_label??'Contact us'}}</a>
+                                        </div>
                                     </div>
-                                    <div class="banner-content">
-                                        <p class="col-lg-11 pl-0 pr-0">{!! $slidersDatum->short_description !!}
-                                        </p>
-                                    </div>
-                                    <div class="banner-btn">
-                                        <a href="{{$slidersDatum?->button1_link??'#about'}}"
-                                           class="contact-btn">{{$slidersDatum?->button1_label??'Get started'}}</a>
-                                        <a href="{{$slidersDatum?->button1_link??'#contact'}}"
-                                           class="contact-btn contact-banner-btn">{{$slidersDatum?->button1_label??'Contact us'}}</a>
+                                </div>
+                                <div class="col-lg-5 col-md-5 col-sm-12">
+                                    <div class="banner-right-con wow slideInRight">
+                                        <figure class="mb-0">
+                                            <img style="width:740px;"
+                                                 src="{{asset($slidersDatum?->thumbnail_image??'frontend/assets/image/banner-right-img.png')}}"
+                                                 alt="banner-right-img">
+                                        </figure>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-5 col-md-5 col-sm-12">
-                                <div class="banner-right-con wow slideInRight">
-                                    <figure class="mb-0">
-                                        <img style="width:740px;"
-                                             src="{{asset($slidersDatum?->thumbnail_image??'frontend/assets/image/banner-right-img.png')}}"
-                                             alt="banner-right-img">
-                                    </figure>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
+                        @endforeach
+                    </div>
+                    <!--banner-end-->
                 </div>
-                <!--banner-end-->
-            </div>
-        </section>
+            </section>
+        @endif
     </div>
 </div>
 <!---header-and-banner-section-->

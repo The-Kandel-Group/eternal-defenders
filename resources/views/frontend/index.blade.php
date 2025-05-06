@@ -20,8 +20,8 @@
                                     <div class="Effective-sec-item mb-4" style="background: #040a1f;">
                                         <figure>
                                             <img
-                                                    src="{{ asset($coreValuesDatum->icon??'frontend/assets/image/Effective-sec-item-img6.png') }}"
-                                                    alt="Effective-sec-item-img" class="img-fluid">
+                                                src="{{ asset($coreValuesDatum->icon??'frontend/assets/image/Effective-sec-item-img6.png') }}"
+                                                alt="Effective-sec-item-img" class="img-fluid">
                                         </figure>
                                         <div class="Effective-sec-item-title">
                                             <h4 class="mb-0">{{$coreValuesDatum->title}}
@@ -48,7 +48,7 @@
                                 <div class="Effective-sec-item-title">
                                     <h4 class="mb-0 pt-0">Our Vision
                                     </h4>
-                                    {!! $ourVisionPage->body !!}
+                                    {!! $ourVisionPage?->body !!}
                                 </div>
                             </div>
                         </div>
@@ -97,7 +97,8 @@
                                                      style="background: rgba(255, 255, 255, 0.1); border-radius: 10px;">
                                                     <div class="row align-items-center">
                                                         <div class="col-1 pr-2">
-                                                            <h5 class="m-0"><i class="{{$servicesDatum->icon_fa}}"></i></h5>
+                                                            <h5 class="m-0"><i class="{{$servicesDatum->icon_fa}}"></i>
+                                                            </h5>
                                                         </div>
                                                         <div class="col-3 pl-2">
                                                             <h5 class="m-0">{{$servicesDatum->title}}</h5>
@@ -566,7 +567,7 @@
                                 <p>{{$vacanciesDatum->sub_title}}
                                     <span class="dots">...</span></p>
                                 <div class="more" style="display: none;">
-                                   {!! $vacanciesDatum->description !!}
+                                    {!! $vacanciesDatum->description !!}
                                 </div>
                                 <a class="blog-post-item-title-link readBtn" href="javascript:void(0)"
                                    onclick="readMore(this)">Read more <i class="fas fa-chevron-right"></i></a>
@@ -605,9 +606,9 @@
                                     <a href="#">
                                         <figure class="mb-0">
                                             <img
-                                                    src="{{$blogsDatum->image??asset('frontend/assets/image/blog-post-img1.png')}}"
-                                                    alt="blog-post-img" class="img-fluid"
-                                                    style="object-fit: cover; height:540px;">
+                                                src="{{$blogsDatum->image??asset('frontend/assets/image/blog-post-img1.png')}}"
+                                                alt="blog-post-img" class="img-fluid"
+                                                style="object-fit: cover; height:540px;">
                                         </figure>
                                     </a>
                                 </div>
@@ -619,8 +620,9 @@
                                         <h4 class="mb-3">{{$blogsDatum->title}}
                                         </h4>
                                     </a>
-                                    <a href="#" class="blog-post-item-title-link">Read more <i
-                                                class="fas fa-chevron-right"></i></a>
+                                    <a href="{{route('blog.detail',$blogsDatum->slug)}}" class="blog-post-item-title-link">
+                                        Read more
+                                        <i class="fas fa-chevron-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -677,13 +679,15 @@
                     </div>
                     <div class="row mt-4">
                         <div class="col-6">
-                            <input required type="email" placeholder="Email" name="email" id="email" value="{{ old('email') }}">
+                            <input required type="email" placeholder="Email" name="email" id="email"
+                                   value="{{ old('email') }}">
                             @if ($errors->has('email'))
                                 <div class="text-danger">{{ $errors->first('email') }}</div>
                             @endif
                         </div>
                         <div class="col-6">
-                            <input required type="tel" placeholder="Mobile Number" name="mobile_number" id="mobile_number"
+                            <input required type="tel" placeholder="Mobile Number" name="mobile_number"
+                                   id="mobile_number"
                                    value="{{ old('mobile_number') }}">
                             @if ($errors->has('mobile_number'))
                                 <div class="text-danger">{{ $errors->first('mobile_number') }}</div>

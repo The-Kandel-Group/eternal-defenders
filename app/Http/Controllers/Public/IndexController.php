@@ -13,6 +13,7 @@ use App\Models\Post;
 use App\Models\ServiceCategory;
 use App\Models\Slider;
 use App\Models\Vacancy;
+use Illuminate\Http\Request;
 
 
 class IndexController extends Controller
@@ -78,6 +79,19 @@ class IndexController extends Controller
         } catch (\Throwable $th) {
             session()->flash('error', 'Something went wrong.');
             return redirect()->back()->withInput(); // keep the form inputs
+        }
+    }
+
+    public function blogDetail($slug)
+    {
+        try {
+            $data['post']=Post::where('slug',$slug)->where('status',1)->first();
+            if (!$data['post']) {
+                return view('frontend.pages.404-not-found');
+            }
+            return view('frontend.blog-detail',$data);
+        } catch (\Throwable $th) {
+            return view('frontend.pages.404-not-found');
         }
     }
 
