@@ -616,7 +616,7 @@
                                     {{--                                <a href="single-post.html">--}}
                                     {{--                                    <h6>Trend In Design</h6>--}}
                                     {{--                                </a>--}}
-                                    <a href="#">
+                                    <a href="{{route('blog.detail',$blogsDatum->slug)}}">
                                         <h4 class="mb-3">{{$blogsDatum->title}}
                                         </h4>
                                     </a>

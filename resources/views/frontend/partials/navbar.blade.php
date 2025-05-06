@@ -6,7 +6,7 @@
             <div class="container">
                 <div class="header-con">
                     <nav class="navbar navbar-expand-lg navbar-light p-0">
-                        <a class="navbar-brand p-0" href="{{url('/')}}">
+                        <a class="navbar-brand p-0 mb-2" href="{{url('/')}}">
                             <img src="{{asset(getConfigTableData()?->logo)}}" alt="logo-img" class="img-fluid">
                             {{--                            <img src="{{asset('frontend/assets/image/logo-img.png')}}" alt="logo-img" class="img-fluid">--}}
                         </a>
