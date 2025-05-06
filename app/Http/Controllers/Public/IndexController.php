@@ -86,7 +86,6 @@ class IndexController extends Controller
     {
         try {
             $data['post']=Post::where('slug',$slug)->where('status',1)->first();
-            return view('frontend.pages.404-not-found');
             if (!$data['post']) {
                 return view('frontend.pages.404-not-found');
             }
