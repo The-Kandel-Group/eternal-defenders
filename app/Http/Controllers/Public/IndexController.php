@@ -44,10 +44,10 @@ class IndexController extends Controller
                 ->get();
             $data['coreValues'] = CoreValues::where('status', 1)->get();
             $data['vacancies'] = Vacancy::where('status', 1)->orderby('position', 'asc')->get();
-            $data['aboutUsPage'] = Page::where('slug','about-us')->where('status', 1)->first();
-            $data['missionPage'] = Page::where('slug','our-mission')->where('status', 1)->first();
-            $data['ourVisionPage'] = Page::where('slug','our-vision')->where('status', 1)->first();
-            $data['blogs'] = Post::where('status', 1)->get();
+            $data['aboutUsPage'] = Page::where('slug', 'about-us')->where('status', 1)->first();
+            $data['missionPage'] = Page::where('slug', 'our-mission')->where('status', 1)->first();
+            $data['ourVisionPage'] = Page::where('slug', 'our-vision')->where('status', 1)->first();
+            $data['blogs'] = Post::where('status', 1)->orderby('created_at', 'desc')->take(3)->get();
             $data['sliders'] = Slider::where('status', 1)->get();
             return view('frontend.index', $data);
         } catch (\Throwable $th) {
@@ -82,14 +82,29 @@ class IndexController extends Controller
         }
     }
 
+    public function blogs(Request $request)
+    {
+        try {
+            $keyword = trim($request->get('keyword'));
+            $query = Post::where('status', 1);
+            if ($keyword) {
+                $query->whereRaw('LOWER(title) LIKE ?', ['%' . strtolower($keyword) . '%']);
+            }
+            $data['blogs'] = $query->orderby('created_at', 'desc')->paginate(3);
+            return view('frontend.blogs', $data);
+        } catch (\Throwable $th) {
+            return view('frontend.pages.404-not-found');
+        }
+    }
+
     public function blogDetail($slug)
     {
         try {
-            $data['post']=Post::where('slug',$slug)->where('status',1)->first();
+            $data['post'] = Post::where('slug', $slug)->where('status', 1)->first();
             if (!$data['post']) {
                 return view('frontend.pages.404-not-found');
             }
-            return view('frontend.blog-detail',$data);
+            return view('frontend.blog-detail', $data);
         } catch (\Throwable $th) {
             return view('frontend.pages.404-not-found');
         }

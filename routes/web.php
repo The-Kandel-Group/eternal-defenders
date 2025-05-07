@@ -52,6 +52,7 @@ Route::get('/', [IndexController::class, 'index'])->name('index');
 Route::post('save-contact/', [IndexController::class, 'saveContact'])->name('saveContact');
 Route::post('save-newsletter/', [IndexController::class, 'saveNewsletter'])->name('saveNewsletter');
 Route::get('blog/{slug}', [IndexController::class, 'blogDetail'])->name('blog.detail');
+Route::get('blogs', [IndexController::class, 'blogs'])->name('blogs');
 
 /*FRONTEND ROUTE*/
 Route::prefix(getSystemPrefix())->middleware(['auth', 'permission.routes', 'log'])->group(function () {

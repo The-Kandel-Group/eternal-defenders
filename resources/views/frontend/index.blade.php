@@ -600,15 +600,16 @@
                             }
                         @endphp
 
-                        <div class="col-lg-6 col-md-6 col-12 {{$slideLeftRight}} ">
+                        <div class="col-lg-4 col-md-4 col-12 {{$slideLeftRight}} ">
                             <div class="blog-post-item">
                                 <div class="blog-post-item-img">
                                     <a href="#">
                                         <figure class="mb-0">
-                                            <img
-                                                src="{{$blogsDatum->image??asset('frontend/assets/image/blog-post-img1.png')}}"
-                                                alt="blog-post-img" class="img-fluid"
-                                                style="object-fit: cover; height:540px;">
+                                            <a href="{{route('blog.detail',$blogsDatum->slug)}}"> <img
+                                                    src="{{$blogsDatum->image??asset('frontend/assets/image/blog-post-img1.png')}}"
+                                                    alt="blog-post-img" class="img-fluid"
+                                                    style="object-fit: cover; height:540px;">
+                                            </a>
                                         </figure>
                                     </a>
                                 </div>
@@ -620,13 +621,22 @@
                                         <h4 class="mb-3">{{$blogsDatum->title}}
                                         </h4>
                                     </a>
-                                    <a href="{{route('blog.detail',$blogsDatum->slug)}}" class="blog-post-item-title-link">
+                                    <a href="{{route('blog.detail',$blogsDatum->slug)}}"
+                                       class="blog-post-item-title-link">
                                         Read more
                                         <i class="fas fa-chevron-right"></i></a>
                                 </div>
                             </div>
                         </div>
                     @endforeach
+                    <div class="col-12">
+                         <span class="float-end mt-2">
+                        <a href="{{route('blogs')}}" class="text-white fs-5" style="font-size:31px;">
+                            See All <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </span>
+                    </div>
+
                 </div>
             </div>
         </div>
